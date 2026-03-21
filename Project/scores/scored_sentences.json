@@ -1,0 +1,58 @@
+{
+  "kajanova": [
+    {
+      "sentence": "The Rolling Stone History of Rock and Roll.",
+      "score": -8.2203
+    },
+    {
+      "sentence": "The following tables show the probabilities of rhythm archetype occurrence in particular jazz and rock styles.",
+      "score": -9.5787
+    },
+    {
+      "sentence": "The history of jazz and rock Despite that, the frequency of pattern occurrence and the pattern characteristics themselves make it possible to identify typical jazz and rock archetypes.",
+      "score": -9.5829
+    }
+  ],
+  "larson": [
+    {
+      "sentence": "Tin Pan Alley was the first half of the 20th century.",
+      "score": -8.7209
+    },
+    {
+      "sentence": "growth of R&B and country music in the post-war years.",
+      "score": -8.9682
+    },
+    {
+      "sentence": "Rhythm and Blues would become one of the most prevailing influences in popular music in the last half of the 20th century.",
+      "score": -9.2091
+    }
+  ],
+  "short_history": [
+    {
+      "sentence": "The rock ‘n’ roll era began nearly 70 years ago in 1955.",
+      "score": -9.3662
+    },
+    {
+      "sentence": "But only four years after Rock Around the Clock had launched the popularity of rock ‘n’ roll, there was a crisis.",
+      "score": -9.4091
+    },
+    {
+      "sentence": "1 on the Billboard charts in July of 1955, marking the dawn of the rock ‘n’ roll era.",
+      "score": -9.4599
+    }
+  ],
+  "wikipedia": [
+    {
+      "sentence": "For a few years it became the most commercially successful form of rock and roll.",
+      "score": -9.0489
+    },
+    {
+      "sentence": "Because the development of rock and roll was an evolutionary process, no single record can be identified as unambiguously \"the first\" rock and roll record.",
+      "score": -9.0903
+    },
+    {
+      "sentence": "Ruth Padel claimed that rock and roll was one of the first music genres to define an age group.",
+      "score": -9.1195
+    }
+  ]
+}

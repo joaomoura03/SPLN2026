@@ -119,38 +119,63 @@ def clean_text(text):
 
 
 def clean_kajanova(text):
-    """Specific cleaning for Kajanova PDF.
-    Removes: bibliographic info, table of contents, copyright, discography, bibliography.
     """
-    # Remove everything before the Introduction (TOC, copyright, ISBN, etc.)
+    Specific cleaning for Kajanova PDF.
+    
+    Seguindo a abordagem do aula4.py: marcamos primeiro os blocos
+    de footnotes com um símbolo especial (@) e depois removemo-los,
+    tal como se faz com os conceitos do dicionário médico.
+    """
+    # 1. Remove tudo antes da Introduction (TOC, copyright, ISBN)
     match = re.search(r'\nIntroduction\n', text)
     if match:
         text = text[match.start():]
 
-    # Remove table of contents lines (text followed by dots and a page number)
+    # 2. Remove Discography, Bibliography e Notes from author
+    for section in ['Discography', 'Bibliography', 'Notes from the author']:
+        match = re.search(rf'\n{section}\n', text)
+        if match:
+            text = text[:match.start()]
+
+    # 3. Remove tabela de conteúdos (linhas com ... seguidas de número)
     text = re.sub(r'^.+\.{3,}\s*\d+\s*$', '', text, flags=re.MULTILINE)
 
-    # Remove footnote reference lines (e.g. "1 München: Juventa Verlag, 1968.")
-    text = re.sub(r'^\d+\s+\w.*?(Verlag|Press|Publisher|Journal).*$', '', text, flags=re.MULTILINE)
+    # 4. Marca blocos de footnotes com @ (igual ao aula4.py que marca conceitos)
+    # Footnotes começam com número isolado seguido de texto bibliográfico
+    # Ex: "65 A complementary rhythm pattern..."
+    # Ex: "71 Using 823 various musical examples..."
+    text = re.sub(r'(?m)^(\d{1,2})\s+([A-Z])', r'@\1 \2', text)
 
-    # Remove Discography section onwards
-    match = re.search(r'\nDiscography\n', text)
-    if match:
-        text = text[:match.start()]
+    # 5. Remove tudo o que foi marcado como footnote (linhas que começam com @)
+    # Remove o bloco inteiro até à próxima linha não-footnote
+    text = re.sub(r'@\d+[^\n]*\n?', '', text)
 
-    # Remove Bibliography section onwards
-    match = re.search(r'\nBibliography\n', text)
-    if match:
-        text = text[:match.start()]
+    # 6. Remove inline footnote numbers colados a palavras
+    # Ex: "rhythm65," -> "rhythm," | "organisation62," -> "organisation,"
+    text = re.sub(r'(?<=[a-zA-Z])\d{1,2}(?=[,\.\s])', '', text)
+
+    # 7. Remove linhas com padrões claros de referências bibliográficas
+    # (contêm palavras alemãs/eslovacas ou padrões de citação)
+    text = re.sub(r'^.*?(Verlag|Supraphon|Bratislava\s*\d|Praha:|Warszava:|Graz,\s*\d|VEB,|SAV\s).*$',
+                  '', text, flags=re.MULTILINE)
+    text = re.sub(r'^.*?\bp\.\s*\d+.*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^.*?pp\.\s*\d+.*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^.*?No\.\s*\d+,\s*\d{4}.*$', '', text, flags=re.MULTILINE)
+
+    # 8. Remove linhas com texto alemão/eslovaco (palavras características)
+    text = re.sub(r'^.*?(räumliche|Rhythmik und|Musikgestaltung|Musikkulturen|Jazzforschung|Jazzbuch|Kapitoly).*$',
+                  '', text, flags=re.MULTILINE)
+
+    # 9. Remove tabelas de percentagens
+    text = re.sub(r'^.+\d+\s*%\s*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^(Jazz|Rock)\s+(Genre|Occurrence|\d).*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^(Probability|The Total|researched patterns|archetypes).*$', '', text, flags=re.MULTILINE)
 
     return clean_text(text)
 
 
 def clean_larson(text):
-    """Specific cleaning for Larson PDF.
-    Removes: repeated chapter headers, copyright lines, key terms blocks,
-             trivia notes, music cut boxes, study questions.
-    """
+    """Specific cleaning for Larson PDF."""
     # Remove repeated header/copyright lines
     text = re.sub(r'Chapter 1: The Roots of Rock and Roll from The History.*?\n', '', text)
     text = re.sub(r'by Thomas Larson \| 5th Edition \|.*?\n', '', text)
@@ -160,36 +185,39 @@ def clean_larson(text):
     text = re.sub(r'^(KEY\s+(TERMS|FIGURES)|CHAPTER \d+.*|TRIVIA NOTE|MUSIC CUT \d+)\s*$',
                   '', text, flags=re.MULTILINE)
 
-    # Remove all-caps section titles (e.g. "THE BLACK ROOTS OF ROCK AND ROLL")
+    # Remove all-caps section titles
     text = re.sub(r'^[A-Z][A-Z\s\'\&\-]{10,}$', '', text, flags=re.MULTILINE)
 
-    # Remove study questions section
+    # Remove lines with "CHAPTER 1" in the middle (header remnants)
+    text = re.sub(r'^.*CHAPTER \d+.*The Roots of Rock.*$', '', text, flags=re.MULTILINE)
+
+    # Remove Personnel/Music Cut lines
+    text = re.sub(r'^.*Personnel:.*$', '', text, flags=re.MULTILINE)
+
+    # Remove study questions
     match = re.search(r'\nSTUDY\s*\nQUESTIONS', text)
     if match:
         text = text[:match.start()]
+
+    # Remove study question lines starting with number + Describe/What/Why
+    text = re.sub(r'^\d+\s+(Describe|What|Why|How)\b.*$', '', text, flags=re.MULTILINE)
 
     return clean_text(text)
 
 
 def clean_short_history(text):
-    """Specific cleaning for Short History PDF.
-    This source is already clean prose — only general cleaning needed.
-    """
+    """Specific cleaning for Short History PDF."""
     return clean_text(text)
 
 
 def clean_wikipedia(text):
-    """Specific cleaning for Wikipedia web content.
-    Removes: spaces before punctuation (link artifacts), citation markers.
-    """
-    # Remove spaces before punctuation (artifact from BeautifulSoup link extraction)
+    """Specific cleaning for Wikipedia web content."""
+    # Remove spaces before punctuation (artifact from link extraction)
     text = re.sub(r' ([,;:\.\!\?])', r'\1', text)
-    # Remove any remaining citation markers
     text = re.sub(r'\[\d+\]', '', text)
     return clean_text(text)
 
 
-# Map each source id to its specific cleaner function
 CLEANERS = {
     "kajanova":      clean_kajanova,
     "larson":        clean_larson,
