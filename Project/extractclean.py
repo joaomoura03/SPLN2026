@@ -206,7 +206,8 @@ def clean_larson(text):
 
 
 def clean_short_history(text):
-    """Specific cleaning for Short History PDF."""
+    # Remove linhas que começam com número isolado (fragmentos de frase)
+    text = re.sub(r'^\d+\s+on\b', '', text, flags=re.MULTILINE)
     return clean_text(text)
 
 

@@ -1,0 +1,438 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{\textbf{A Short History of Rock 'n' Roll}}
+\author{Ken Best \\\\
+\small SPLN --- 2025/26}
+\date{2023}
+
+\begin{document}
+
+\maketitle
+
+% ── Abstract ──────────────────────────────────────────────────
+\begin{abstract}
+The following three sentences were automatically selected from the source text
+using a trigram language model trained on the full corpus of four sources.
+Each sentence was scored by the average log-probability of its constituent
+trigrams. Sentences whose trigrams appear more frequently in the corpus
+receive a higher score, making them the most \emph{representative} sentences
+of the source.
+
+\begin{itemize}
+  \item The rock `n' roll era began nearly 70 years ago in 1955.
+  \item But only four years after Rock Around the Clock had launched the popularity of rock `n' roll, there was a crisis.
+  \item 1 on the Billboard charts in July of 1955, marking the dawn of the rock `n' roll era.
+\end{itemize}
+\end{abstract}
+
+% ── Named Entity Recognition ──────────────────────────────────
+\section{Named Entity Recognition}
+
+The following named entities were automatically identified in the source
+text using the spaCy NLP library with the \texttt{en\_core\_web\_sm} model.
+
+\subsection{People and Artists}
+\begin{itemize}
+  \item Aerosmith
+  \item Al Jackson
+  \item Alan Freed
+  \item Alan Lomax
+  \item Alexis Korner
+  \item Alice
+  \item Anthrax
+  \item Aretha Franklin
+  \item Arthur Crudup
+  \item Artie Kornfeld
+  \item Barry White
+  \item Beatles
+  \item Bee Gees
+  \item Berry Gordy Jr.
+  \item Bessie Smith
+  \item Bill Haley
+  \item Billboard
+  \item Blackboard Jungle
+  \item Blues
+  \item Bob Dylan
+  \item Boo
+  \item Booker T. Jones
+  \item Brian Wilson
+  \item Bruce Springsteen
+  \item Buddy Holly
+  \item Buggles
+  \item C.L. Franklin
+  \item Carl Perkins
+  \item Carole King's ``Beautiful
+  \item Chubby Checker
+  \item Chuck Berry
+  \item Clinton
+  \item Club Band
+  \item Cyndi Lauper
+  \item Dave van Ronk
+  \item Dean
+  \item Don McLean's
+  \item Donald ``Duck'' Dunn
+  \item Donna Summer
+  \item Dylan
+  \item Elvis Presley
+  \item Eric Clapton
+  \item Eric Clapton
+  \item Etta James
+  \item Frank Zappa
+  \item Frank Sinatra
+  \item George Clinton
+  \item Gloria Estefan
+  \item Haley
+  \item Hank Williams
+  \item Holly
+  \item Hollywood Argyles
+  \item Hudie Ledbetter
+  \item Jam Bands
+  \item James Brown
+  \item James Taylor Joni Mitchell
+  \item Janis Joplin
+  \item Jann Wenner
+  \item Jeff Beck
+  \item Jerry Lieber
+  \item Jimi Hendrix
+  \item Jimmy Page
+  \item Joan Jett
+  \item John
+  \item John F. Kennedy
+  \item John Lennon
+  \item John Mellencamp
+  \item John Phillips
+  \item John Travolta
+  \item Johnny Ange
+  \item Johnny B. Goode
+  \item Johnny Nash
+  \item Katie Perry
+  \item Keith Richards
+  \item Kinks
+  \item Kiss
+  \item Kraftwerk
+  \item Kyu Sakamoto
+  \item Lady Ga
+  \item Lead Belly
+  \item Led Zeppelin
+  \item Lennon
+  \item Leonard
+  \item Linda Ronstadt
+  \item Lindsay Buckingham
+  \item Lobo
+  \item Lomaxes
+  \item Lonnie Donagan's
+  \item Los Lobos
+  \item Madonna
+  \item Mamas
+  \item Martin Luther King Jr.
+  \item Marvin Gaye
+  \item McCartney
+  \item Metallica
+  \item Mia
+  \item Michael Lang
+  \item Midnight Special
+  \item Mike Stoller
+  \item Molly
+  \item Monterey Pop
+  \item Motown
+  \item Muddy Waters
+  \item New Order
+  \item Papas
+  \item Paul Simon
+  \item Pearl Jam
+  \item Peggy Sue
+  \item Pete Townshend of The Who
+  \item Phil Chess
+  \item Phil Spector
+  \item Pink
+  \item Pink Floyd
+  \item Presley
+  \item Ray Charles
+  \item Rhythm
+  \item Richard
+  \item Richard Penniman
+  \item Ricky Nelson
+  \item Ritchie Valens
+  \item Robert F.
+  \item Robert Johnson
+  \item Rock Around
+  \item Rod Stewart
+  \item Ronnie Wood
+  \item Run Old Jerimiah
+  \item Ruth Brown
+  \item Steve Cropper
+  \item Stevie Nicks
+  \item Tambourine Man
+  \item Tom Petty
+  \item Tommy
+  \item Travelin
+  \item Troggs
+  \item Vickie Sue Robinson
+  \item William Robinson
+\end{itemize}
+
+\subsection{Bands, Labels and Organisations}
+\begin{itemize}
+  \item Alley-Oop
+  \item American Pie
+  \item Archive of American Folk Song
+  \item Army
+  \item Billboard Magazine
+  \item Blue Suede Shoes
+  \item Blues
+  \item Booker T \& the MGs
+  \item Clock
+  \item Congress
+  \item Deadheads
+  \item Dewey Phillips
+  \item Doors
+  \item Emerson
+  \item Fleetwood Mac
+  \item Freddy Fender
+  \item Georgia Turner
+  \item Green Onions
+  \item Heartbreakers
+  \item House
+  \item Knock Three Times
+  \item Lead Belly
+  \item Little Richard
+  \item MTV
+  \item McKinley Morganfield
+  \item Miami Sound Machine
+  \item Modern Country Music
+  \item Music Television
+  \item Otis Redding
+  \item Papa's Got
+  \item Parliaments
+  \item R\&B
+  \item R.E.M.
+  \item Race Music
+  \item Richie Valens
+  \item Rock `n Roll
+  \item Rock `n' Roll Tracing
+  \item Roll Over Beethoven
+  \item Rollin' Stone
+  \item Sam \& Dave
+  \item Shelly Fabares
+  \item Sister Rosetta Tharpe
+  \item Smokey
+  \item Stax
+  \item Sun Studios
+  \item The Righteous Brothers
+  \item The Rolling Stones
+  \item Tutti Fruitti
+  \item Woodstock Music and Arts Festival
+  \item Woody Guthrie
+  \item Yardbirds
+  \item gangsta
+  \item jukebox musicals
+  \item the Holding Company
+  \item the Abbey Road Studios
+  \item the Allman Brothers
+  \item the Big Bopper
+  \item the Civil Rights Movement
+  \item the Grateful Dead
+  \item the Library of Congress
+  \item the Lion Sleeps Tonight
+  \item the Monterey International Pop Festival
+  \item the Motor City: Motown Records
+  \item the Radio Star
+  \item the Rolling Stone Illustrated History
+  \item the Sun Studios
+\end{itemize}
+
+\subsection{Places and Locations}
+\begin{itemize}
+  \item America
+  \item Australia
+  \item B.J.Thomas
+  \item Beatlemania
+  \item Boston
+  \item California
+  \item Chains
+  \item Chicago
+  \item Cleveland
+  \item Dallas
+  \item Detroit
+  \item Eagles
+  \item England
+  \item Florida
+  \item France
+  \item Georgia
+  \item Indiana
+  \item Japan
+  \item Kentucky
+  \item Liverpool
+  \item London
+  \item Los Angeles
+  \item Lubbock
+  \item Lynyrd Skynyrd
+  \item Macon
+  \item Memphis
+  \item Mississippi
+  \item N.J.
+  \item New Jersey
+  \item New Orleans
+  \item New York
+  \item New York City
+  \item Nirvana
+  \item Plainfield
+  \item San Antonio
+  \item San Francisco
+  \item Seattle
+  \item Soundgarden
+  \item South Africa
+  \item Soviet Union
+  \item St. Louis
+  \item Sukiaki
+  \item Tennessee
+  \item Texas
+  \item Tokens
+  \item U.S.
+  \item Vietnam
+  \item Wonderland
+  \item the Soviet Union
+  \item the United States
+\end{itemize}
+
+\subsection{Dates and Time Periods}
+\begin{itemize}
+  \item 100 years
+  \item 14-year-old
+  \item 16-year-old
+  \item 1934
+  \item 1941
+  \item 1950
+  \item 1951
+  \item 1955
+  \item 1960
+  \item 1960s
+  \item 1964
+  \item 1965
+  \item 1966
+  \item 1967
+  \item 1969
+  \item 1970
+  \item 1975
+  \item 1976
+  \item 1977
+  \item 1980
+  \item 1991
+  \item 1994
+  \item 20, 50
+  \item August of 1980
+  \item Dec. 8, 1980
+  \item Decades later
+  \item Feb. 7, 1964
+  \item February 1959
+  \item Five months earlier
+  \item Four years later
+  \item Jan
+  \item July of 1955
+  \item June of 1967,
+  \item Seventy years
+  \item Sixties
+  \item Sunday
+  \item The 1980s
+  \item The following year
+  \item Three months
+  \item Today
+  \item Twelve years later
+  \item Two days
+  \item a 16th century
+  \item a decade earlier
+  \item about 40 years
+  \item centuries
+  \item five-year
+  \item last decade
+  \item late November 1936
+  \item mid-60s
+  \item mid-June of 1937
+  \item nearly 70 years ago
+  \item nearly a century later
+  \item only four years
+  \item recent years
+  \item the mid-1970s
+  \item the 1930s
+  \item the 1940s
+  \item the 1950s
+  \item the 1960s
+  \item the 1970s
+  \item the 20th Century
+  \item the 20th century
+  \item the 21st Century
+  \item the decade of the 60s
+  \item the early 1950s
+  \item the early 1960s
+  \item the early 1970s
+  \item the early 20th century
+  \item the late 1950s
+  \item the late 1980s
+  \item the late 20th century
+  \item the mid-1960s
+  \item the mid-20th century
+  \item the middle of the 20th century
+  \item the next three years
+  \item the previous year
+  \item the year
+  \item three years
+  \item today
+\end{itemize}
+
+\subsection{Works of Art}
+\begin{itemize}
+  \item Can See Clearly Now
+  \item From the Cradle
+  \item Graceland
+  \item Jersey Boys
+  \item Love
+  \item MC Hammer
+  \item Mother of the Blues
+  \item Ozzie and Harriet
+  \item Pet Sounds
+  \item Rising Sun
+  \item Rubber Soul
+  \item Saturday Night Fever
+  \item Smokey Joe's Caf\'e
+  \item The Donna Reed Show
+  \item The Four Season's
+  \item The Jersey Boys
+  \item The Sex Pistols
+  \item The Teddy Bears
+  \item The Wall of Sound
+  \item Welcome Back Kotter
+  \item the Queen of Soul
+  \item ``Rubber Soul
+\end{itemize}
+
+
+% ── Source Information ────────────────────────────────────────
+\section{Source Information}
+
+This article was produced from the following
+source~\cite{best2023}:
+
+\begin{itemize}
+  \item \textbf{Title:} \textit{A Short History of Rock 'n' Roll}
+  \item \textbf{Author(s):} Ken Best
+  \item \textbf{Year:} 2023
+  \item \textbf{Publisher:} Self-published
+\end{itemize}
+
+% ── Bibliography ──────────────────────────────────────────────
+\begin{thebibliography}{9}
+\bibitem{best2023}
+Ken Best.
+\textit{A Short History of Rock 'n' Roll}.
+Self-published, 2023.
+\end{thebibliography}
+
+\end{document}

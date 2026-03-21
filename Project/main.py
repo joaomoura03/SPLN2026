@@ -4,10 +4,11 @@ main.py
 Pipeline completo do projeto SPLN 2025/26.
 Corre todos os passos em sequência:
 
-    a) extractclean.py   - Extrai e limpa o texto das fontes
-    b) ngram_model.py    - Tokeniza e constrói o modelo de n-gramas
+    a) extractclean.py    - Extrai e limpa o texto das fontes
+    b) ngram_model.py     - Tokeniza e constrói o modelo de n-gramas
     c) score_sentences.py - Faz o scoring e seleciona as 3 frases
-    d) ner.py            - Análise NER com spaCy
+    d) ner.py             - Análise NER com spaCy
+    e) generate_latex.py  - Gera os artigos LaTeX e compila os PDFs
 
 Uso:
     python3 main.py          -> corre todos os passos
@@ -24,6 +25,7 @@ SCRIPTS = [
     ("b", "ngram_model.py",     "Tokenização e modelo de n-gramas"),
     ("c", "score_sentences.py", "Scoring e seleção de frases"),
     ("d", "ner.py",             "NER com spaCy"),
+    ("e", "generate_latex.py",  "Geração dos artigos LaTeX e PDFs"),
 ]
 
 
@@ -55,7 +57,6 @@ def run_script(script_name, description, step):
 
 
 def main():
-    # Verifica se foi pedido um passo de início específico
     start_from = "a"
     if "--from" in sys.argv:
         idx = sys.argv.index("--from")

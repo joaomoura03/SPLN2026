@@ -1,0 +1,403 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{\textbf{Rock and Roll}}
+\author{Wikipedia contributors \\\\
+\small SPLN --- 2025/26}
+\date{2025}
+
+\begin{document}
+
+\maketitle
+
+% ── Abstract ──────────────────────────────────────────────────
+\begin{abstract}
+The following three sentences were automatically selected from the source text
+using a trigram language model trained on the full corpus of four sources.
+Each sentence was scored by the average log-probability of its constituent
+trigrams. Sentences whose trigrams appear more frequently in the corpus
+receive a higher score, making them the most \emph{representative} sentences
+of the source.
+
+\begin{itemize}
+  \item For a few years it became the most commercially successful form of rock and roll.
+  \item Because the development of rock and roll was an evolutionary process, no single record can be identified as unambiguously "the first" rock and roll record.
+  \item Ruth Padel claimed that rock and roll was one of the first music genres to define an age group.
+\end{itemize}
+\end{abstract}
+
+% ── Named Entity Recognition ──────────────────────────────────
+\section{Named Entity Recognition}
+
+The following named entities were automatically identified in the source
+text using the spaCy NLP library with the \texttt{en\_core\_web\_sm} model.
+
+\subsection{People and Artists}
+\begin{itemize}
+  \item Abraham
+  \item Adam Faith
+  \item Alan Freed
+  \item Alan Freed's
+  \item Alexis Korner
+  \item Alexis Petridis
+  \item Amos Milburn 's
+  \item Annie
+  \item Arthur Crudup
+  \item BB King
+  \item Baker
+  \item Beatles
+  \item Belmonts
+  \item Berry and Domino
+  \item Bill Flagg
+  \item Bill Haley 's
+  \item Bill Haley's
+  \item Billboard
+  \item Billy Ward
+  \item Blackboard Jungle
+  \item Blues
+  \item Bo Diddley
+  \item Bobby Fuller
+  \item Bobby Rydell
+  \item Bobby Vee
+  \item Bosom
+  \item Buddy Holly
+  \item Carl Perkins
+  \item Cha Cha Hogan
+  \item Chuck Berry
+  \item Chuck Berry's
+  \item Dick Clark 's
+  \item Diddley
+  \item Eddie Cochran
+  \item Elvis Presley
+  \item Etta James '
+  \item Fats Domino
+  \item Fender
+  \item Fools Fall
+  \item Frankie Avalon
+  \item Frankie Lymon \&
+  \item Freed
+  \item G. C. Altschuler
+  \item Gale Storm
+  \item Gatemouth Brown
+  \item Gene Vincent
+  \item Gladiolas
+  \item Goree Carter
+  \item Goree Carter 's
+  \item Greg Harris
+  \item Greg Kot
+  \item Guitar Slim
+  \item Haley
+  \item Hall
+  \item Hank Ballard 's
+  \item Hank Williams
+  \item Hardrock Gunter 's
+  \item Henry
+  \item Henry"
+  \item Herman
+  \item Howlin
+  \item Ike Turner
+  \item Jackie Brenston
+  \item James
+  \item James Madison Carpenter
+  \item Jerry Lee Lewis
+  \item Jerry Lee Lewis '
+  \item Jerry Leiber
+  \item Jimmy Clanton
+  \item Jimmy Preston 's
+  \item Joe Brown
+  \item Joe Hill Louis
+  \item Joe Meek
+  \item Joe Turner
+  \item Johnny Cash
+  \item Johnny Kidd \&
+  \item Johnny Otis
+  \item Johnny Rivers
+  \item Keith Richards
+  \item Kings
+  \item Les Paul
+  \item Little Richard
+  \item Lonnie Donegan
+  \item Louis Armstrong
+  \item M. T. Bertrand
+  \item Marty Wilde
+  \item Maurie Orodenker
+  \item Maybellene
+  \item Mike Stoller
+  \item Mina Carson
+  \item Mindbenders
+  \item Muddy Waters
+  \item Pat Boone
+  \item Pat Hare
+  \item Perkins
+  \item Pete Johnson 's
+  \item Phil Spector
+  \item Presley
+  \item Quarrymen
+  \item Rhythm
+  \item Richard
+  \item Ricky Nelson
+  \item Ritchie Valens
+  \item Robert Christgau
+  \item Robert Johnson
+  \item Rock Around
+  \item Roy Brown 's
+  \item Ruth Padel
+  \item Sam Phillips
+  \item Sam Phillips'
+  \item Smiley Lewis'
+  \item Teddy Boy
+  \item Thornton
+  \item Todd Storz
+  \item Tommy Sands
+  \item Tommy Steele
+  \item Trad
+  \item Trixie Smith
+  \item Wayne Fontana
+  \item Wee Willie Harris
+  \item William Fender
+  \item William J. Schafer
+  \item Willie Johnson
+  \item Wolf
+  \item Wynonie Harris 's
+  \item the Dave Clark Five
+\end{itemize}
+
+\subsection{Bands, Labels and Organisations}
+\begin{itemize}
+  \item American Bandstand
+  \item American Rock and Roll
+  \item Bellboys
+  \item Berry
+  \item Big Band
+  \item Big Joe Turner's
+  \item Bill Haley \& His Comets
+  \item Billy Fury
+  \item Black American
+  \item Brenston
+  \item British Invasion
+  \item CNN
+  \item Chess
+  \item Clock
+  \item Cyril Davies
+  \item Delta Cats
+  \item Fats Domino
+  \item Forties
+  \item Freddie
+  \item Freddie Bell
+  \item Freed
+  \item G. C Altschuler
+  \item Georgia Gibbs
+  \item Groups
+  \item Haley
+  \item Jordanaires
+  \item KOWH
+  \item Louis Prima
+  \item Payola
+  \item R\&B
+  \item Richards
+  \item Rolling Stone
+  \item Sister Rosetta Tharpe
+  \item Sister Rosetta Tharpe 's
+  \item Sun
+  \item The Wall Street Journal
+  \item True Life Romance
+  \item Welsh
+  \item Yardbirds
+  \item the "Rock and Roll Inn
+  \item the Big Bopper
+  \item the Bill Haley \& His Comets
+  \item the Dreamers,
+  \item the Fountain Sisters
+  \item the Hollywood Walk of Fame
+  \item the Maguire Sisters
+  \item the Rock and Roll Hall of Fame
+  \item the Rock n Roll Hall of Fame
+  \item the Rolling Stones
+  \item the U.S. Supreme Court
+  \item the United States Army
+  \item the Vaughan Williams Memorial Library
+\end{itemize}
+
+\subsection{Places and Locations}
+\begin{itemize}
+  \item America
+  \item Birmingham
+  \item Britain
+  \item Chicago
+  \item Cleveland
+  \item Connecticut
+  \item Detroit
+  \item Dion
+  \item Dominoes
+  \item Encyclopædia
+  \item Fifties
+  \item Flamingos
+  \item Howlin
+  \item Ivory Joe Hunter
+  \item Liverpool
+  \item London
+  \item Manchester
+  \item Memphis
+  \item Nebraska
+  \item New Jersey
+  \item New Orleans
+  \item New York City
+  \item Ohio
+  \item Omaha
+  \item Philadelphia
+  \item Pirates
+  \item Rhythm
+  \item South Merchantville
+  \item St. Louis
+  \item UK
+  \item US
+  \item United States
+  \item the United States
+\end{itemize}
+
+\subsection{Dates and Time Periods}
+\begin{itemize}
+  \item 15 years
+  \item 1922
+  \item 1934
+  \item 1938
+  \item 1940s
+  \item 1942
+  \item 1943
+  \item 1944
+  \item 1946
+  \item 1947
+  \item 1949
+  \item 1950
+  \item 1951
+  \item 1952
+  \item 1953
+  \item 1954
+  \item 1955
+  \item 1956
+  \item 1957
+  \item 1958
+  \item 1959
+  \item 1960
+  \item 1964
+  \item 1965
+  \item 1985
+  \item 1991
+  \item 2017
+  \item April 12, 1954
+  \item April 1954
+  \item April 1960
+  \item December 1959
+  \item February 1959
+  \item July 1954
+  \item March 1951
+  \item March 1958
+  \item May 1953
+  \item May 1958
+  \item November 1959
+  \item October 1957
+  \item October 1958
+  \item The 1940s
+  \item Three months earlier
+  \item a few years
+  \item a year later
+  \item about 1957
+  \item about 1963
+  \item almost a decade before
+  \item earlier decades
+  \item early 1950s
+  \item early 1955
+  \item early 1960s
+  \item four months
+  \item four years earlier
+  \item late 1950s
+  \item later that year
+  \item the 1800s
+  \item the 1920s
+  \item the 1930s
+  \item the 1940s and 1950s
+  \item the 1950s
+  \item the early 1930s
+  \item the early 1950s
+  \item the early 1960s
+  \item the early 20th century
+  \item the following year
+  \item the late 1940s
+  \item the late 1950s
+  \item the mid 50s
+  \item the mid-1950s
+  \item the mid-1960s
+  \item thirteen-year-old
+\end{itemize}
+
+\subsection{Works of Art}
+\begin{itemize}
+  \item "My Walking Baby
+  \item A Teenager in Love
+  \item Baby Let's Play House
+  \item Blue Suede Shoes
+  \item Crazy Man, Crazy
+  \item Dance With Me
+  \item Good Rocking Tonight
+  \item Heartbreak Hotel
+  \item Hearts of Stone
+  \item Hound Dog
+  \item I Fought the Law
+  \item I Hear You Knockin '
+  \item Lawdy Miss Clawdy
+  \item Little Darlin '
+  \item Love
+  \item Move It On Over
+  \item My Man Rocks Me
+  \item Oh Babe
+  \item Presley, Lewis, Haley
+  \item Rock Around the Clock
+  \item Rock Awhile
+  \item Rock Me
+  \item Rock and Roll
+  \item Rock the Joint
+  \item Roll 'Em Pete
+  \item Roll With Me
+  \item Sh-Boom" and Nappy Brown's
+  \item Shadows
+  \item Shakin' All Over
+  \item Sixty Minute Man
+  \item Strange Things Happening Every Day
+  \item The Baffled Knight
+  \item The Bobby Fuller Four
+  \item The Fat Man
+  \item Work With Me
+  \item the Teddy Boys
+\end{itemize}
+
+
+% ── Source Information ────────────────────────────────────────
+\section{Source Information}
+
+This article was produced from the following
+source~\cite{wikipedia2025}:
+
+\begin{itemize}
+  \item \textbf{Title:} \textit{Rock and Roll}
+  \item \textbf{Author(s):} Wikipedia contributors
+  \item \textbf{Year:} 2025
+  \item \textbf{Publisher:} Wikipedia, The Free Encyclopedia
+\end{itemize}
+
+% ── Bibliography ──────────────────────────────────────────────
+\begin{thebibliography}{9}
+\bibitem{wikipedia2025}
+Wikipedia contributors.
+\textit{Rock and Roll}.
+Wikipedia, The Free Encyclopedia, 2025.
+Available at: \url{https://en.wikipedia.org/wiki/Rock\_and\_roll}
+\end{thebibliography}
+
+\end{document}

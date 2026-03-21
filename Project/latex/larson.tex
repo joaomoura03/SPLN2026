@@ -1,0 +1,745 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{\textbf{The Roots of Rock and Roll}}
+\author{Thomas Larson \\\\
+\small SPLN --- 2025/26}
+\date{2020}
+
+\begin{document}
+
+\maketitle
+
+% ── Abstract ──────────────────────────────────────────────────
+\begin{abstract}
+The following three sentences were automatically selected from the source text
+using a trigram language model trained on the full corpus of four sources.
+Each sentence was scored by the average log-probability of its constituent
+trigrams. Sentences whose trigrams appear more frequently in the corpus
+receive a higher score, making them the most \emph{representative} sentences
+of the source.
+
+\begin{itemize}
+  \item Tin Pan Alley was the first half of the 20th century.
+  \item growth of R\&B and country music in the post-war years.
+  \item Rhythm and Blues would become one of the most prevailing influences in popular music in the last half of the 20th century.
+\end{itemize}
+\end{abstract}
+
+% ── Named Entity Recognition ──────────────────────────────────
+\section{Named Entity Recognition}
+
+The following named entities were automatically identified in the source
+text using the spaCy NLP library with the \texttt{en\_core\_web\_sm} model.
+
+\subsection{People and Artists}
+\begin{itemize}
+  \item A. P. Carter
+  \item Ahmet Ertigan
+  \item Al Benson
+  \item Al Dog'' Lorenz at
+  \item Al Hall
+  \item Al Jolson
+  \item Alan Freed
+  \item Annie
+  \item Aretha Franklin
+  \item Aristocrat
+  \item Art Rupe
+  \item Art Satherley
+  \item Audrey
+  \item B. B. King
+  \item Ba-Ba-Re-Bop
+  \item Ballard
+  \item Barbara Allen
+  \item Beatles
+  \item Bebop's
+  \item Ben E. King
+  \item Benny Goodman
+  \item Bessie Smith
+  \item Betsy
+  \item Bill Davis
+  \item Bill Haley
+  \item Bill Kenny
+  \item Bill Monroe
+  \item Billboard
+  \item Billie Jean Williams
+  \item Bing Crosby
+  \item Bitches Brew
+  \item Black Gospel
+  \item Blind Lemon Jefferson
+  \item Bluegrass
+  \item Blues
+  \item Blues Cowboy
+  \item Bo Diddley
+  \item Bob Dylan
+  \item Bob Wills
+  \item Bop
+  \item Boy Williamson nnHowlin
+  \item Brown
+  \item Carl Hogan
+  \item Carl Perkins
+  \item Carroll Walter
+  \item Charley Patton
+  \item Charlie Parker
+  \item Charlie Parker
+  \item Chester Burnett
+  \item Chick Webb Orchestra
+  \item Choo Choo
+  \item Choo Choo Ch' Boogie
+  \item Chubby Checker
+  \item Chuck Berry
+  \item Clyde McPhatter
+  \item Cole Porter
+  \item Count Basie
+  \item Cover Rock and Roll Party
+  \item Crosby
+  \item Crows El Dorados
+  \item Dean Martin
+  \item Diana Ross's
+  \item Diddley
+  \item Disc
+  \item Disc Jockeys
+  \item Dizzy Gillespie
+  \item Don Law
+  \item Don Redman
+  \item Don Robey
+  \item Doris Day
+  \item Dorsey
+  \item Earl Scruggs
+  \item Eddie
+  \item Elmore James
+  \item Elton John's ``
+  \item Elvis Presley
+  \item Elvis Presley
+  \item Enrico Caruso
+  \item Ernest Tubb
+  \item Ethel Waters
+  \item Fats Domino
+  \item Flatt
+  \item Fletcher Henderson
+  \item Fools Fall
+  \item Frank Sinatra
+  \item Frank Sinatra
+  \item Frank Sinatra's
+  \item Frankie Lymon
+  \item Fred Rose
+  \item Fred Rose.
+  \item Freed
+  \item Gene Autry
+  \item Gene Brooks
+  \item George Goldner
+  \item George Goldner's Gee
+  \item George and Ira Gershwin
+  \item George ``Cat Man'' Stiles
+  \item George ``Hound
+  \item Gospel
+  \item Handy
+  \item Hank
+  \item Hank Ballard
+  \item Hank Williams
+  \item Hank Williams's
+  \item Herb Abramson
+  \item Howlin' Wolf
+  \item Huddie Ledbetter
+  \item Hunter
+  \item Hunter Hancock
+  \item Impalas
+  \item Irving Berlin
+  \item JIMMIE RODGERS
+  \item JORDAN
+  \item Jambalaya
+  \item James
+  \item James Brown
+  \item James D. Vaughan
+  \item Jarvis
+  \item Jerry Lee Lewis
+  \item Jerry Leiber
+  \item Jerry Wexler
+  \item Jim Crow
+  \item Jimmie
+  \item Jimmie Rodgers
+  \item Jimmy Merchant
+  \item Jimmy Shirley
+  \item Jimmy Wright
+  \item Jitterbug
+  \item Jive'' Smalls
+  \item Joan Baez
+  \item Jockey Jack'' Gibson
+  \item Joe Negroni
+  \item Joe Turner's
+  \item John Carson
+  \item John Lee Hooker
+  \item John Phillip Sousa
+  \item Johnny Cash
+  \item Johnny Otis
+  \item Johnson
+  \item Jolson
+  \item Jordan
+  \item Jules
+  \item Jump
+  \item KEY TERMS
+  \item Lee Hooker
+  \item Leonard Chess
+  \item Lester Flatt
+  \item Lester Flatt/Earl Scruggs
+  \item Lindy Hop
+  \item Lionel Hampton
+  \item Little Walter
+  \item Lorenz
+  \item Louis Armstrong
+  \item Louis Jordan
+  \item Lymon
+  \item Lymon's
+  \item MOONDOG
+  \item Mahalia Jackson
+  \item Mamie Smith
+  \item McPhatter
+  \item Mike Stoller
+  \item Miles Davis
+  \item Milt Gabler
+  \item Monroe
+  \item Moondog
+  \item Moondog Frankie Lymon
+  \item Muddy Waters
+  \item Napster
+  \item Opry
+  \item Oscar Hammerstein II
+  \item Pan Alley
+  \item Pan Alley America's
+  \item Pat Boone
+  \item Patti Page
+  \item Peer
+  \item Peggy Lee
+  \item Penguins
+  \item Pete Seeger
+  \item Phil
+  \item Po Simpkins
+  \item Presley
+  \item ROBERT JOHNSON
+  \item Ralph Peer
+  \item Ralph Peer
+  \item Ravens Cadillacs Orioles
+  \item Ray Charles
+  \item Record Labels
+  \item Rhythm
+  \item Richard
+  \item Richard Barrett
+  \item Richard Rodgers
+  \item Riley B. King
+  \item Robert Johnson
+  \item Robert Johnson
+  \item Rodgers
+  \item Roy Rogers
+  \item Rudy Vallee
+  \item Sacred Harp
+  \item Sam Cooke
+  \item Sam Phillips
+  \item Santiago
+  \item Sara
+  \item Saul Bihari
+  \item Sinatra
+  \item Smith Ralph Peer
+  \item Son House
+  \item Sonny Boy Williamson
+  \item Southern Gospel
+  \item Southern Gospel Southern Gospel
+  \item Stevie Wonder
+  \item Storz
+  \item Storz Nebraska
+  \item Syd Nathan
+  \item Teenagers Herman Santiago
+  \item Tennessee Waltz
+  \item Thelonious Monk
+  \item Thomas Dorsey
+  \item Thomas Dorsey Jimmie Rodgers
+  \item Thomas Louis Hardin
+  \item Todd Storz
+  \item Tom
+  \item Tommy Dorsey Orchestra
+  \item Tony Bennett
+  \item Van Halen
+  \item Vic
+  \item W. C. Handy
+  \item Walter nnWillie Dixon
+  \item Warren Suttles
+  \item William ``Lefty'' Frizzell
+  \item Williams
+  \item Willie Brown
+  \item Willie Dixon
+  \item Wolf
+  \item Wynonie Harris
+  \item includ- Melisma
+  \item nnRCA Victor---1901
+  \item nnRichard Rodgers
+  \item smart jive
+\end{itemize}
+
+\subsection{Bands, Labels and Organisations}
+\begin{itemize}
+  \item A\&R
+  \item Alto
+  \item Association of America
+  \item Association of Jazz America
+  \item Atlantic Records
+  \item BLUE YODEL
+  \item Ballard
+  \item Bell Sound Studios
+  \item Billie Jean
+  \item Black Gospel
+  \item Black Gospel KEY Bing
+  \item Blackwood Brothers
+  \item Blue Yodel
+  \item Blues
+  \item Blues KEY TERMS
+  \item Blues TERMS Race music Disc
+  \item Bristol
+  \item Bristol Sessions
+  \item Broadway Tin Pan Alley
+  \item CBS
+  \item Castle Studios
+  \item Chess Records
+  \item Chicago R\&B
+  \item Cleveland Arena
+  \item Coasters
+  \item Columbia
+  \item Columbia Records
+  \item Country Western
+  \item Cowboy
+  \item Cowboy Music
+  \item DELTA BLUESMEN
+  \item Delta
+  \item Dominos
+  \item Duke Ellington
+  \item Ernest Tubb
+  \item Flamingos Fleetwoods
+  \item Freed
+  \item GROUPS
+  \item Gee
+  \item Gold Records
+  \item Goldman
+  \item Goodman
+  \item Gospel Music
+  \item Handy
+  \item Hardin
+  \item Holiday Inn
+  \item House
+  \item Huntin
+  \item Imperials
+  \item KDKA
+  \item KEY
+  \item KFVD
+  \item KFWB
+  \item KGFJ
+  \item KOWH
+  \item KWKH
+  \item KXLW
+  \item Leadbelly
+  \item Leiber and Stoller
+  \item Louis Prima
+  \item MGM
+  \item Mercury Records
+  \item Minton's Playhouse
+  \item Mississippi Delta
+  \item NBC
+  \item NJ
+  \item Negro Radio Station
+  \item New World
+  \item Okeh Records
+  \item Orioles
+  \item Page
+  \item Pan Alley
+  \item Peer
+  \item Pike
+  \item Playboys
+  \item R\&B
+  \item RCA
+  \item RCA Victor
+  \item RCA Victor Studio 1
+  \item RIAA
+  \item Ravens
+  \item Recording Industry Association of America
+  \item Rock and Roll
+  \item Rock and Roll Party
+  \item Rolling Stones
+  \item Rumba
+  \item Sinatra
+  \item Sister Rosetta Tharpe
+  \item Swallows
+  \item Sweet Home Chicago
+  \item Swing Era
+  \item TN
+  \item TX
+  \item Tampa Red
+  \item Texas Troubadours
+  \item The Birth of Radio
+  \item The Ink Spots
+  \item The Mills Brothers
+  \item The Moondog House
+  \item The Moondog House Rock and Roll Party
+  \item The Post-War Transitional
+  \item The Rock and Roll Show
+  \item Tin Pan Alley
+  \item Trinity Baptist Church
+  \item VAUGHN
+  \item Victor  Records
+  \item WBAP
+  \item WDIA
+  \item WJW
+  \item WKBW
+  \item WLW
+  \item WNJR
+  \item WSM
+  \item Woody Guthrie
+  \item artist \& repertoire
+  \item cappella group vocal
+  \item ers
+  \item jukebox
+  \item nnLorenz Hart South Pacific
+  \item sax
+  \item the Blue Grass Boys
+  \item the Country Music Hall of Fame
+  \item the Everly Brothers
+  \item the Gaither Vocal Band
+  \item the Gunter Hotel
+  \item the Hokum Brothers
+  \item the Hot Five and Hot
+  \item the Ink Spots
+  \item the Louvin Brothers
+  \item the Mills Brothers
+  \item the Original Dixieland Jass Band
+  \item the Paul Whiteman Orchestra
+  \item the Statler Brothers
+  \item the Swing Era
+  \item the Swing Era of Chicago's South Side
+  \item the Texas Playboys
+  \item the Tympany Five
+  \item the WSM Barn Dance
+\end{itemize}
+
+\subsection{Places and Locations}
+\begin{itemize}
+  \item Alabama
+  \item America
+  \item Atlanta
+  \item Baltimore
+  \item Billie
+  \item Boston
+  \item Bristol
+  \item Britain
+  \item Buffalo
+  \item California
+  \item Camden
+  \item Chicago
+  \item Christian-
+  \item Cincinnati
+  \item Cleveland
+  \item DENVER
+  \item Dallas
+  \item Decca
+  \item Eagles
+  \item England
+  \item Fiddlin
+  \item Flamingos
+  \item Georgia
+  \item Greenwood
+  \item Hollywood
+  \item Houston
+  \item Jordan
+  \item Kansas City
+  \item Kentucky
+  \item Los Angeles
+  \item Louisiana
+  \item Maybelle
+  \item Memphis
+  \item Miami
+  \item Minneapolis
+  \item Mississippi
+  \item NY
+  \item Nashville
+  \item New Jersey
+  \item New Orleans
+  \item New York
+  \item New York City
+  \item Newark
+  \item Oak Ridge Quartet
+  \item Ohio
+  \item Oklahoma
+  \item Omaha
+  \item Pennsylvania
+  \item Pittsburgh
+  \item Salt Lake City
+  \item San Antonio
+  \item Shreveport
+  \item Southern United States
+  \item St. Louis
+  \item TEXAS
+  \item Tennessee
+  \item Texas
+  \item Tommy
+  \item Tulsa
+  \item Tutwiler
+  \item U.S.
+  \item United States
+  \item Vain
+  \item Vaughan
+  \item Vicksburg
+  \item Virginia
+  \item West Virginia
+  \item Westerns
+  \item the United States
+\end{itemize}
+
+\subsection{Dates and Time Periods}
+\begin{itemize}
+  \item 18 weeks
+  \item 1870
+  \item 1885
+  \item 1892-1960
+  \item 1894
+  \item 1894-1937
+  \item 1897-1933
+  \item 1899-1993
+  \item 1900
+  \item 1903
+  \item 1903-1977
+  \item 1908-1975
+  \item 1909-1986
+  \item 1910
+  \item 1911
+  \item 1911-1938
+  \item 1912
+  \item 1914
+  \item 1915-1998
+  \item 1917
+  \item 1920
+  \item 1921
+  \item 1922
+  \item 1923
+  \item 1923-1953
+  \item 1924
+  \item 1925
+  \item 1926
+  \item 1927
+  \item 1928
+  \item 1929
+  \item 1930 1945 1946 1954
+  \item 1930s
+  \item 1931
+  \item 1932
+  \item 1934
+  \item 1937
+  \item 1938
+  \item 1940
+  \item 1940s
+  \item 1942
+  \item 1944
+  \item 1945
+  \item 1946
+  \item 1946 to 1954
+  \item 1947
+  \item 1948
+  \item 1949
+  \item 1950
+  \item 1950s
+  \item 1952
+  \item 1953
+  \item 1954
+  \item 1955
+  \item 1956
+  \item 1957
+  \item 1958
+  \item 1959
+  \item 1960
+  \item 1960s
+  \item 1965
+  \item 1969
+  \item 1970s
+  \item 1976
+  \item 1977
+  \item 1981
+  \item 1989
+  \item 1997
+  \item 1999
+  \item 20 years later
+  \item 20th century America
+  \item 21 weeks
+  \item 45s
+  \item August 21, 1935
+  \item August 4, 1927
+  \item August of 1927
+  \item Between 1927 and 1933
+  \item Between 1957 and 1959
+  \item February 24, 1976
+  \item February 3, 1928
+  \item January 1, 1953
+  \item January 1953
+  \item January 1956
+  \item January 23, 1946
+  \item June 19 and 20
+  \item June 1951
+  \item March 1952
+  \item November 28, 1925
+  \item September 1954
+  \item September 23, 1952
+  \item The mid-1920s
+  \item The next year
+  \item Today
+  \item a few years
+  \item a few years later
+  \item a year
+  \item as early as 1932
+  \item at least 30 years
+  \item century
+  \item daily
+  \item early 1950s
+  \item early 1960s
+  \item early 20th century
+  \item fourteen weeks
+  \item his day
+  \item just a few years
+  \item just weeks
+  \item many years
+  \item nnCapitol---1942
+  \item only 13 years old
+  \item only six years
+  \item several troublesome years
+  \item several years
+  \item some years
+  \item that year
+  \item the  1920s
+  \item the 1950s
+  \item the 17th century
+  \item the 1920s
+  \item the 1930s
+  \item the 1940s
+  \item the 1940s and
+  \item the 1950s
+  \item the 1960s
+  \item the 1970s
+  \item the 20th century
+  \item the day
+  \item the days
+  \item the early 1900s
+  \item the early 1920s
+  \item the early 1930s
+  \item the early 1990s
+  \item the early 2000s
+  \item the early 20th
+  \item the early to mid 1900s
+  \item the early years
+  \item the early years of the 20th century
+  \item the first half of the 20th century
+  \item the first half of the 20th
+  \item the first half of the 20th century
+  \item the last half of the 20th century
+  \item the late 1800s
+  \item the late 1920s
+  \item the late 1940s
+  \item the late 19th century
+  \item the mid-1800s
+  \item the mid-1920s
+  \item the mid-1950s
+  \item the next eight years
+  \item the next few years
+  \item the next two years
+  \item the turn of the century
+  \item the week of November 22, 1936
+  \item the year was 1953
+  \item the years
+  \item this day
+  \item today
+  \item two years
+  \item weeks
+\end{itemize}
+
+\subsection{Works of Art}
+\begin{itemize}
+  \item Ain't Nobody Here But Us Chickens
+  \item America's Blue Yodeler
+  \item Annie
+  \item Annie Had a Baby
+  \item Annie's Aunt Fanny
+  \item Black Gospel Highly
+  \item Black Snake Moan
+  \item Blessed Assurance
+  \item Blue Yodels
+  \item Blues Boy
+  \item CHOO CHOO CH' BOOGIE
+  \item Caldonia
+  \item Candle in the Wind
+  \item Cold
+  \item Crazy Blues
+  \item Cross Road Blues
+  \item Cross Road Blues
+  \item Describe
+  \item Father of the Blues
+  \item Flying Home
+  \item Good Rocking Tonight
+  \item Hey Good Lookin'
+  \item I Believe I'll Dust My Broom
+  \item It's Tight Like That
+  \item It's Too Soon
+  \item I've Got You nnOscar Hammerstein II
+  \item Jesus Loves Me
+  \item Livery Stable Blues
+  \item Love
+  \item Love Me Tender
+  \item Memphis Blues
+  \item My Funny Valentine
+  \item Old Man River
+  \item Ol' Man River
+  \item Open the Door
+  \item Saturday Night Fish Fry
+  \item Sh-Boom
+  \item Singing Brakeman
+  \item Symphony Sid''
+  \item Take My Hand, Precious Lord
+  \item Terraplane Blues
+  \item The Carter Family
+  \item The Jazz Singer
+  \item The Moondog Coronation Ball
+  \item The Singing Cowboy
+  \item The Sound of Music
+  \item The Stars and Stripes Forever
+  \item The Swing Era During the Swing Era
+  \item The Twist
+  \item There Goes My Baby
+  \item Tutti Frutti
+  \item Vocalion
+  \item Western and Race
+  \item Write Me a Letter
+  \item Yo' Ol'
+  \item a Grammy Award
+  \item the Soul Stirrers
+\end{itemize}
+
+
+% ── Source Information ────────────────────────────────────────
+\section{Source Information}
+
+This article was produced from the following
+source~\cite{larson2020}:
+
+\begin{itemize}
+  \item \textbf{Title:} \textit{The Roots of Rock and Roll}
+  \item \textbf{Author(s):} Thomas Larson
+  \item \textbf{Year:} 2020
+  \item \textbf{Publisher:} Kendall Hunt Publishing
+\end{itemize}
+
+% ── Bibliography ──────────────────────────────────────────────
+\begin{thebibliography}{9}
+\bibitem{larson2020}
+Thomas Larson.
+\textit{The Roots of Rock and Roll}.
+Dubuque, IA: Kendall Hunt Publishing, 2020.
+\end{thebibliography}
+
+\end{document}
