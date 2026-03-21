@@ -1,0 +1,585 @@
+On the History of Rock Music
+Yvetta Kajanová
+On the History of Rock Music
+Bibliographic Information published by the Deutsche
+Nationalbibliothek
+The Deutsche Nationalbibliothek lists this publication in
+the Deutsche Nationalbibliografie; detailed bibliographic
+data is available in the internet at http://dnb.d-nb.de.
+Cover image: © Oliver Solga
+Gratefully acknowledging the financial support of Vedecká grantová agentúra
+in publishing this book (VEGA Research Agency grant 1/0728/11)
+Translated from the Slovakian original: Yvetta Kajanová: K dejinám rocku,
+Bratislava, CoolArt 2010
+Translated by Lea & Geoffrey Duffell
+ISBN 978-3-631-65556-6 (Print)
+E-ISBN 978-3-653-04793-6 (E-Book)
+DOI 10.3726/978-3-653-04793-6
+© Peter Lang GmbH
+Internationaler Verlag der Wissenschaften
+Frankfurt am Main 2014
+All rights reserved.
+PL Academic Research is an Imprint of Peter Lang GmbH.
+Peter Lang – Frankfurt am Main ∙ Bern ∙ Bruxelles ∙ New York ∙
+Oxford ∙ Warszawa ∙ Wien
+All parts of this publication are protected by copyright. Any
+utilisation outside the strict limits of the copyright law, without
+the permission of the publisher, is forbidden and liable to
+prosecution. This applies in particular to reproductions,
+translations, microfilming, and storage and processing in
+electronic retrieval systems.
+This publication has been peer reviewed.
+www.peterlang.com
+Introduction ............................................................................................................7
+The Rhythm of Rock ............................................................................................13
+Rock and Roll ......................................................................................................15
+Hard Rock – the First Era 1960 – 1967 ...............................................................29
+Experimental Rock . .............................................................................................43
+Hard Rock – the Second Era 1967 – 1979 ...........................................................51
+Art Rock ..............................................................................................................63
+Electronic Rock ....................................................................................................71
+Punk Rock ...........................................................................................................77
+New Wave ............................................................................................................87
+Heavy Metal .........................................................................................................93
+Hard Core ...........................................................................................................107
+Speed Metal and Thrash Metal ..........................................................................111
+Death Metal, Black Metal and Grind Core ........................................................119
+The 1980s Synthesis and Polystylistic Rock Music ..........................................125
+Conclusion .........................................................................................................141
+Summary ............................................................................................................151
+Discography .......................................................................................................153
+Bibliography ......................................................................................................155
+Notes from the author ........................................................................................161
+
+Introduction
+Thorough research and analyses on the theory and history of rock music have not
+been published until recently. The reason for this stems from the relatively short
+history of rock music as a genre, which does not allow an adequate analytical
+perspective on the historical and artistic values of rock. Furthermore, the existing
+methodologies used in other areas of musicology cannot be directly applied to
+other genres of music. The issue is further complicated because much previous
+research has coupled its analysis with non-musical disciplines such as sociology
+and other social sciences, business management, economics and aesthetics. With
+those aspects being perhaps the most commonly researched, rock encyclopae-
+dias and dictionaries have mainly focused on the most successful bands and their
+and how many weeks they stayed there. Aesthetic and sociological works on rock
+music have tried to illuminate the importance of rock personalities, and their a ppeal
+to the listener, by examining both the musical subcultures and the social milieu of
+Beat – die sprachlose Opposition1
+rebellious group movements” as being associated with 1960s beat music. They
+drop-outs and other social non-conformists; some consciously adopting aesthetic
+values which had previously been the preserve of the middle and upper classes.
+There were also the instances of the beat as a medium of expression that was not
+ment is classless.
+conclusions about late 1960s rock music:
+1. Beat is an unconscious form of protest, an opposition without a clear purpose.
+2. Although aggression is beyond the core of the beat itself, rock, however, is
+not an amiable expression of art towards the wider society, as it has created
+1 München: Juventa Verlag, 1968.
+
+individuals to socialise.
+3. Beat is a culture with its own symbolic characteristics including clothing, hair-
+styles, make-up, image and social context. All these components can result in
+a synaesthetic effect.
+jects new ideas onto life and society from its increasing adoption of socio-
+political criticism.
+Richard Meltzer, in his book The Aesthetics of Rock2, investigates the semantic
+meanings in rock compositions though, at the same time, he is aware of the extent
+gion and technology.
+Meltzer confronts the aesthetics of rock with a comparison of symbolic mean-
+studied philosophy at Yale University, was a proponent of performance art and
+a student of Allan Kaprow3. He later wrote lyrics for the heavy metal band Blue
+Öyster Cult.
+As punk or heavy metal4
+2 New York: Da Capo Press, 1970, second edition 1987.
+formance art. Performance art was followed by the expansion into the production
+of intermedia compositions, conceptualism and happenings. Fujak, Július: Musical
+Correla(c)tivity. Notes on Unconventional Music Aesthetic. Nitra: ILAC Faculty of
+Arts, UCP, 2005; Podpera, Rastislav: Quo vadis musica: premeny sociálnych funkcií
+hudby. Bratislava: Veda, 2006.
+tion”. In Popular Music and Society. Bowling Green University Popular Press, Winter
+Behavioral Problems and Preferences for Heavy Metal and Rap Music: A Case Study
+of a Southern Middle School”. In Deviant Behavior, No.11, 1990, p. 381-394; Gross,
+L. Robert: Heavy Metal Music: A New Subculture in American Society”. In The
+Journal of Popular Culture, 1990, No. 24, pp. 119-130.
+
+reference to The Rhythm of Rock chapter. Theoreticians agree on the basic prem-
+When researching rhythm as a driving movement with its own inner organisa-
+tion62, in jazz and rock music particular aspects need to be considered when ana-
+lysing their rhythm patterns.
+Firstly, rhythm is associated with various musical and non-musical attributes,
+which explains its differing roles in musical cultures around the world.63 It also
+ever, comprehensive rhythm analysis, when using specialised computer or statisti-
+cal methods, requires a distancing from the larger aspects to allow focusing on the
+
+Musicologica Slovaca, Rhythmik und Metrik in traditionellen Musikkulturen, SAV
+Bratislava 1990, p. 13.
+63 Sachs, Curt: Rhythm and Tempo. New York: Columbia University Press, 1953;
+Seashore, Carl Emil: Psychology of Music. New York: McGraw Hill Book Comp.,
+
+and psychological aspects. These components together with regional and geographi-
+plains the differences between, for example, the rhythms in African music, European
+music, Indian music etc.
+
+A complementarity of rhythm65, polyrhythm66 and polymetrical part settings67
+in either rock or jazz will also contribute to a perception of a complex rhythm.
+The beat-off beat principle, complementarity, polyrhythm, and polymetrics are
+at the origin of rhythm patterns. However, the question remains as to whether
+According to Ivan
+the innate experience of a species, corresponding
+to typical extreme life situations formulas of people’s ritual behaviour
+the existence of archetypes is merely potential and they undergo an al-
+teration after each execution, they are ambivalent and constantly call for new
+interpretations …”68
+The second issue arises when making a notated record of the rhythm69. Our
+research into jazz and rock rhythm patterns is based on empirical methods and
+consists of listening to recorded music and subsequently transcribing it using the
+traditional European notational system70. For transcribing jazz and rock music this
+type of notation is less than perfect, and there are several different options for
+transcribing the same rhythm section. While the nature of a particular model is
+not always adequately expressed by the musical notation, repeated comparative
+checks help to identify deviations, nuances or errors.
+65 A complementary rhythm pattern is created by a mutual complementary correlation
+amongst the accents of the different lines in a composition. Traditional jazz is a typical
+example of a complementary rhythm.
+66 In complementary rhythm only one pattern is used. In polyrhythm two or more simul-
+taneous patterns are used within the same metre.
+67 Polymetrical part setting is a simultaneous progression of two or more meters. Poly-
+68 ABC . Praha: Supraphon, 1984,
+Analyse von Jazz und Rock”. In Jazzforschung
+
+century-long debate over notational processes has resulted in two analytical meth-
+ods: electronic diagrams including several quantitative methods of measurement, and
+räumliche Prinzipen der Musikgestaltung.” In Musicologica Slovaca, Rhythmik und
+Metrik in traditionellen Musikkulturen. Bratislava: SAV, 1990, p. 28.
+
+Research Methods and Research Findings
+This monograph follows the publication On the History of Jazz Music, it has the
+associated with the chronological development of various rock styles, as com-
+selected at random.71
+When analysing the repetition of rhythm models it is essential to determine the
+length of each single pattern72. A rhythm pattern is a section of the composition
+73. In our research rhythm pattern sam-
+ples were studied for the changes in their structures throughout the composition.
+Since jazz and rock genres have evolved into complex, highly developed forms,
+also likely that these patterns represent typical jazz and rock archetypal rhythmic
+Therefore, at the beginning of our research we hypothesised as to whether jazz
+and rock rhythm patterns exist in these genres as primary archetypal forms. The
+transcribing rhythm patterns using a traditional notation. This was followed by an
+analysis of the transcribed patterns together with records of their frequency in the
+different jazz and rock styles in relation to their chronological sequence.
+Another research objective was to identify the frequency of rhythm archetypes
+in particular songs, to ascertain whether the occurrence of rock archetypes is any
+different from that in jazz, what the probability of archetype occurrences is and
+chetypes is increased by their tendency to constantly spur new variations in the
+
+71 Using 823 various musical examples, the research into jazz and rock rhythm patterns
+was carried out between 1990 and 1998. The preliminary results were published in the
+monograph Kapitoly o jazze a rocku by Yvetta
+72 Zaminer, Friedrich: Rhythmus und Zeitdauern – Organisation. Zweites Colloquium
+der Walcker – Stiftung zur Terminologie der Musik des 20. Jahrhunderts. 1972,
+73 In earlier jazz genres, rhythm pattern durations were approximately 3 to 5 minutes.
+rhythm patterns are longer.
+74 Previous studies on jazz styles characterised their rhythm patterns as an unmutable
+element. Asriel, André: Jazz. Aspekte und Analysen. Berlin: VEB, 1985, p. 314-26,
+
+The reworking of patterns in jazz music differs from that in rock. Whilst in jazz
+the principle of improvisation, constant pattern changes, redeveloping or reinvent-
+ing the model, and recreating new forms within a single song are used, in rock
+music pattern repetitions are rather preferred. However, repetitions are not always
+identical and nuances can occur as well. Hence a pattern repetition may become
+section as well as real time. Unlike in jazz, where pattern changes occur within
+a single piece, in rock music, the variations occur across several compositions in
+which the same rhythm archetypes are found.
+Jazz and rock patterns are closely associated with particular styles during
+their developmental stages. Unlike European classical music, jazz and rock gen-
+established in a particular style, it becomes and remains typical of the style, even
+after the style itself ceases to be a progressive trend in jazz or rock development.
+Research into jazz and rock patterns can illuminate any issues about the styles
+which have remained obscure and chaotic as far as the mainly modern genres
+are concerned. Furthermore, such research could also contribute to resolving the
+or whether they are simply descriptive tools used by critics, or even mere inven-
+tions by rock fans.75
+By means of a structural rhythm analysis it is possible to not only identify the
+characteristic rhythm patterns employed in particular jazz and rock style eras, but
+also to identify the basic rhythm pattern - the archetype or proto-pattern which
+characterises jazz and rock in general - that had already existed in common con-
+sciousness at the origin of a particular genre. We refer to rhythm patterns in Afro-
+American folk music, ragtime, and traditional jazz, to those used in rock and roll,
+Rolling Stones. The early rhythm models should appear in all subsequent jazz and
+Berendt, Joachim Ernst: Kniha o jazze. Bratislava: Supraphon, 1968. Das Jazzbuch.
+Entwicklung und Bedeutung des Jazzmusik. Frankfurt: Fischer, 1953; Das Jazzbuch.
+Von Rag bis Rock. Frankfurt: Fischer, 1973.
+75 Gammond, Peter: The Oxford Companion to Popular Music. Oxford, New York 1991,
+. ZAKR, Warszava 1986, Ward,
+Edward & Stokes, Geoffrey & Tucker, Ken: Rock of Ages. The Rolling Stone History
+of Rock and Roll. New York: Rolling Stone Press, 1986.
+
+rock styles as the basic primary patterns: they are the archetypes that jazz or rock
+music built upon and to which they keep returning in each era.
+Another focus of our research was tempo. We gave it attention when it was one
+elements. We tried to verify the hypothesis that jazz music prefers moderately fast
+fast tempos prevail in mainstream jazz.76
+We hypothesised that rhythm in jazz and rock is manifested through patterns
+that represent rhythm archetypes. We aimed to identify the different archetypal
+chetypes and forms that are only found in jazz and rock music. Throughout the
+development of rock and jazz genres musicians have kept returning to the typical
+archetypal patterns for their sources of inspiration. The history of jazz and rock
+Despite that, the frequency of pattern occurrence and the pattern characteristics
+themselves make it possible to identify typical jazz and rock archetypes.
+Example a - jazz
+76 Kneif, Tibor: Sachlexikon Rockmusik. Instrumente, Stile, Techniken, Industrie und
+muzyki rozrywkowej. Warszava: ZAKR 1986; Wicke, Peter & Ziegenrücker, Wieland:
+Rock, Pop, Jazz, Folk. Handbuch der populären Musik. Leipzig: VEB, 1985.
+
+Example b - rock
+The Examples a and b are the basic jazz and rock rhythm archetypes which,
+sulted in patterns having a stock of unoriginal rhythms - the impulse to re-i ntroduce
+typical jazz patterns was inevitable. The post-bop era jazz synthesis is found, for
+Similarly in the 1970s,
+rock music adopted rhythm patterns from other genres, for example jazz or waltz
+rhythms, and some rhythmic principles from European classical music. Art rock
+metre, which is generally typical of modern popular music, but they also absorb
+This, in turn,
+explains the emergence of punk rock with its rejection of any jazz or non-rock
+features in its rhythms.
+
+Some pure rock styles that did not adopt any jazz patterns are heavy metal, hard
+core, speed metal and thrash metal. Their rhythm models are practically identical;
+hence it is not possible to differentiate between them solely by rhythm pattern
+analysis. All derive from the same musical base - heavy metal elements – and their
+differentiation is through cultural and attitudinal characteristics.
+Rock Pattern Findings
+In the sampled rock music, of 420 patterns the rhythm archetypes were found in
+293 examples, which represents 70% of cases. Thus the probability of rock rhythm
+archetype occurence is 0.70 calculated using the following formula:
+where m=293, n=420, and hence P =0.70.
+This means that 7 out of 10 randomly chosen examples may contain rhythm
+archetypes and 3 may feature different patterns. An archetype occurrence rate of
+approximately 90% was found in post-rock and roll music, punk rock and heavy
+rock, electronic rock and soft rock. The rate was approximately 50% in art rock,
+hard core, speed metal and experimental rock. As little as 30% were found in the
+Jazz Pattern Findings
+Jazz rhythm archetypes were found in 178 instances of the 403 examples, which rep-
+resents 44.1% of cases. The rest were different, variable, or products of spontaneous
+creativity rather than repetition of archetypal models. Thus, the probability of a jazz
+rhythm archetype occurrence is 0.44, which means that of ten randomly selected
+examples, four may feature the jazz archetypes, and the remaining six might not.
+It is also possible to calculate the probability of archetype occurrence in those
+styles which adopt non-jazz elements, or where patterns are innovatively and crea-
+tively re-worked.
+We estimated a rhythm archetype repetition of less than 40% in free jazz, a style
+which overturns conventional models, and a repetition of less than 30 % in the tra-
+ditional jazz, where the typical jazz rhythm was only just emerging. We expected a
+similar occurrence rate - less than 30% - in jazzrock, since rock rhythm archetypes
+
+prevail in this particular jazz style. Approximately a 50% pattern occurrence was
+found in bebop, cool jazz and west coast jazz styles, where jazz musicians have
+tried to abandon jazz rhythm stereotypes and sought new means of expression. We
+expect a pattern occurrence rate of about 60% in hard bop, 70% in soul jazz and
+about 60% in swing. In ragtime music, no archetypes could be found.
+In conclusion, the pattern repetition in rock music is 70% compared to 44 in
+jazz; this shows that jazz music generally employs a far more creative approach
+to pattern building.
+The following tables show the probabilities of rhythm archetype occurrence in
+particular jazz and rock styles. A further and extended quantitative study would
+The Total number of Occurrrence of
+No. of researched styles
+researched patterns archetypes
+Jazz 403 178 11
+Rock 420 293 16
+Probability of the archetype Probability of the archetype
+Jazz 0.441 44 %
+Rock 0.697 70 %
+Jazz Genre Occurrence Rate
+Ragtime 0 %
+Traditional jazz 30 %
+Be bop 50 %
+Cool jazz 50 %
+West coast jazz 50 %
+Hard bop 60 %
+Soul jazz 70 %
+Free jazz 40 %
+Mainstream 50 %
+Jazz-rock and Fusion music 30 %
+
+Rock Genre Occurrence Rate
+Rock and roll 70 %
+Post-rock and roll 90 %
+Punk rock, heavy metal 90 %
+Hard rock, new wave, thrash metal, groove 80 %
+Gothic rock, electronic rock, soft rock 60 %
+Art ock, hard core, speed metal, experimental rock 50 %
+New age 30 %
+The world-wide adoption of jazz and rock music, irregardless of nationality,
+implies a universal acceptance of the basic jazz and rock norms, including rhythm
+archetypes. In so accepting, musicians will employ rhythm archetypes with their
+repetitions as the characteristic element. High proportions of jazz and rock ar-
+chetypes are associated with greater uniformity in these genres and lesser use of
+national rhythms. In this respect, jazz and rock music are tending to become a
+certain universal model; hence jazzmen often say that jazz is cosmopolitan and
+supranational music which has developed from syntheses of many cultures. The
+process is ongoing even despite distances between countries.
+Along with the typical rhythm archetypes, which are the essence of jazz and
+marketing of rock, and partially also of jazz music carries a risk that the more
+non-archetypal rhythm models are used in the compositions, the less successful
+their sales will be.
+
+This book follows the work that commenced in its counterpart, On the History of
+Jazz Music. Both books are the result of a major resarch study in which 403 jazz
+rhythm patterns and 420 rock patterns were analysed in order to identify rhythm
+archetypes in both music genres.
+Using musical and theoretical analyses, On the History of Rock Music follows
+the development of rock music from its origins up to the present time. It focuses
+on the relationships between the sound, improvisations and rhythms in particular
+characteristic elements of rock music. The beat-offbeat principle, polyrhythms
+and poly-metrics are fundamental to rock rhythm patterns. Patterns behave as ar-
+experience of a species.
+opment. In comparison with jazz, rock music more frequently uses the principle
+of pattern repetitions.
+By the means of rhythm analyses, it is possible to not only identify the charac-
+teristic rhythm patterns used in particular rock style eras, but also to determine the
+basic rhythm pattern – the archetype – which characterises rock music in general.
+tendency to engender new variations.
+archetypes were found in 293. That means a 70% archetype occurrence rate or
+pattern repetition, and a probability of 0.70. In conclusion, out of every ten re-
+searched rock patterns, seven possess rhythm archetypes, and the remaining three
+use different rhythm structures.
+
+Discography
+1. Animals: Ark, IRS Rec., 1983.
+2. Beatles: SGT. Pepper’s Lonely Hearts Club Band, EMI, 1967.
+3. Beatles: Abbey Road, EMI, 1969.
+4. The Best of John Vangelis, Polydor, 1983.
+5. Bill Haley and The Comets, Muza, 1985.
+6. Cure: Kiss Me, Kiss Me, Kiss Me, Fiction, 1987.
+7. Dead Kennedys: Fresh Fruit for Rotting Vegetables, Faulty Products, Alterna-
+tive Tentacles, 1980.
+8. Deep Purple: Perfect Strangers, Supraphon, 1984.
+9. Deep Purple: Fireball, EMI, 1971.
+10. Deep Purple in Rock, Jugoton, 1970.
+11. Deep Purple: The House of Blue Light, Supraphon, 1988.
+12. Deep Purple: Made in Japan, Electrola, 1972.
+13. Dylan at Budoka,. CBS, 1978.
+14. Elvis Costello and The Attractions: Ten Bloody Marys and Ten How’s Your
+Fathers, TMP Rec., 1980.
+15. Elvis Costello and The Attractions: Punch The Clock, 1983, Beat Rec.
+16. Elvis, Balkanton, 1979.
+17. Elvis Promised Land, Opus, 1980.
+18. Enya: Shepherds Moons, EMI, 1991.
+19. Frank Zappa: Uncle Meat, Bizzare, Reprise, 1969.
+20. Frank Zappa: Thing Fish,Barking Pumpkin Rec., Capitol, 1984.
+21. Frank Zappa Meets The Mothers of Prevention (European Version), Barking
+Pumpkin Rec., Capitol, 1985.
+22. Frank Zappa - Freak Out! The Mothers Of Invention, Metro-Goldwyn-Meyer,
+23. Frank Zappa: Sleep Dirt, DiscReet Rec., 1979.
+24. Frank Zappa: Boulez Conducts Zappa: The Perfect Strangers, Angel Rec.
+25. Iron Maiden, EMI, 1990.
+26. The Jimi Hendrix Experience, Polydor, 1967.
+27. The Jimi Hendrix Experience: Electric Ladyland, Polydor, 1968.
+28. Joe Satriani: The Extremist, Relativity, 1992.
+29. John and Vangelis, Opus, 1981.
+30. The Kinks, 1964 – 1968, PE Rec., 1969.
+
+31. Kraftwerk, Kling Klang Produkt, 1981.
+32. 50 X The King: Elvis Presley Greatest Songs, Electrorecord, 1984.
+33. Led Zeppelin I., II., III., IV. Atlantic Rec., 1990.
+34. Legendary
+35. Metallica: Jump in The Fire, Popron, 1991.
+36. Metallica, Vertigo, 1991.
+37. Mission: Masque, Phonogram Ltd., 1992.
+38. Napalm Death: Harmony Corruption, Earache Rec., 1980.
+39. Patti Smith: Radio Ethiopia, Arista, 1976.
+40. Patti Smith: Horses, Arista, 1975.
+41. Pink Floyd: Dark Side of The Moon, Harvest, Capitol, 1973.
+42. Pink Floyd: A Momentary Lapse of Reason, EMI, 1987.
+43. Pink Floyd: Ummagumma I., II. vol., Harvest, EMI, 1969.
+44. Police: Zenyatta Mandatta, RTB Rec., 1980.
+45. Police: Ghost in The Machine, Supraphon, 1983.
+46. Roadie, Warner Bros. Rec., 1980.
+47. Rock and Roll, Opus, 1974.
+48. Rock Rotation
+49. Rockin’ With Chuck Berry,
+50. Sade: Diamond Life, Epic, 1984.
+51. Sade: Promise, Epic, 1985.
+52. Sex Pistols: Flogging a Dead Horse, EMI, 1979.
+53. Siouxsie and The Banshees: Superstition, Polydor, 1991.
+54. Siouxsie and The Banshees: Through The Looking Glass, Polydor, 1987.
+55. Sonic Youth: Daydream Nation, Enigma, 1988.
+56. Steve Vai: Passion and Warfare, Relativity, 1990.
+57. Talking Heads: Little Creatures, Supraphon, 1985.
+58. Talking Heads: Speaking In Tongues, Sire, 1983.
+59. Talking Heads: The Name Of This Band Is Talking Heads, 1971 – 1981, Sire
+Rec. Comp., 1982.
+60. 24 Top Oldies, vol.3., RCA, 1981.
+61. U2: The Unforgettable Fire, Yugoton, 1985.
+62. Velvet Underground: White Light /White Heat. Verve, 1968.
+63. The Who: The Best of The Last Ten Years, 1964 – 1974, Karussell, 1975.
+64. The Best of The Who, Supraphon, 1985.
+65. The Who: My Generation, Brunswick Ltd., 1965.
+66. The Who Collection, Polydor, 1981.
+67. The Yardbirds, Bellaphon, 1965.
+68. Yes, Atlantic, 1991.
+
+Bibliography
+1. Adorno, Theodor Wiesengrund. Einleitung in die Musiksoziologie. Zwölf
+theoretische Vorlesungen. Frankfurt a.M.: Suhrkamp Verlag, 1975.
+2. Asriel, André. Jazz. Aspekte und Analysen. Berlin: VEB, 1985.
+3. Baacke, Dieter. Beat – Die sprachlose Opposition. München: Juventa Verlag,
+4. Miles, Barry. Mick Jagger in His Own Words. London: Omnibus Press, 1982;
+Mick Jagger, jeho vlastnými slovami. Bratislava: Champagne Avantgarde,
+5. Jazzforchung,
+Graz, 1984, 16, pp. 133-144.
+6. Berendt, Joachim Ernst. Kniha o jazze. Bratislava: Supraphon, 1968. Das
+Jazzbuch. Entwicklung und Bedeutung des Jazzmusik. Frankfurt: Fischer,
+1953; Das Jazzbuch. Von Rag bis Rock. Frankfurt: Fischer, 1973.
+7. Berger, Roman. Hudba a pravda. Bratislava: EKK, Orman, 1997.
+logica Slovaca, Rhythmik und Metrik in traditionellen Musikkulturen, SAV
+Bratislava 1990.
+of Czech Designating Practice”. In Acta Universitatis Palackianae Olomu-
+censis. Musicologica Olomucensia XI. Olomouc: Facultas Philosophica-
+Aestthetica 24, 2010, pp. 9-22.
+10. Praha: Svo-
+boda, 1969.
+11. Charlton, Katherine. Rock Music Styles: A History. 4th ed. Boston: McGraw-
+Hill, 2003.
+Slovenská hudba, vol. 9, 1966, No. 1, pp. 30-33.
+13. Down Beat, July
+1991, vol. 58, No.7, pp. 28-30.
+Ursachen”. In Jazzforschung, Graz, 1977, No. 8, pp. 101-118.
+musikern und Publikum”. In Jazzforschung, Graz, 1978, No. 9, pp. 89-109.
+16. Panoráma populární hudby
+
+Rock”. In Jazzforschung, Graz, 1977, No. 8, pp. 67-100.
+18. Plný šuplík Zappu. Bratislava: Opus, 1990.
+19. Duffy, John, W. Gold Music Quality. Bra-
+tislava: Champagne Avantgarde, 1993.
+20. Eggebrecht, Hans Heinrich. Musikalisches Denken, Aufsätze zur Theorie und
+Ästhetik der Musik.
+21. Eggebrecht, Hans Heinrich. Funktionale Musik. In Archiv für Musikwissen-
+Musicologica Slovaca, Rhythmik und Metrik in traditionellen Musikkulturen.
+Bratislava: SAV, 1990, pp. 21-30.
+. In Popular Music and Society. Bowling Green University
+Popular Press, Winter 1990, pp. 67-75.
+ioral Problems and Preferences for Heavy Metal and Rap Music: A Case
+Study of a Southern Middle School”. In Deviant Behavior, No.11, 1990,
+pp. 381-394.
+25. Encyclopaedia Britannica [online].
+rary Russia.” In R
+Jazzforschung, Graz, 1973, No. 5, pp. 33-44.
+28. Faltin, Peter. Funkcia zvuku v hudobnej štruktúre. Bratislava: ŠHV, 1966.
+29. Fujak, Július. Nitra: UKFFF, 2006.
+30. . In Communicationi Scienti-
+1984, No. 12, pp. 249-266.
+31. Gammond, Peter. The Oxford Comapnion To Popular Music. New York:
+Oxford University Press, 1991.
+provisation”. In Jazzforschung, 1971-1972, No.3-4, pp. 194-206.
+33. Graf, Christian & Wohlmacher, Uwe. Rockmusiklexikon. Hamburg: Tau-
+rus Press, 1981.
+34. Gross, L. Robert. Music: A New Subculture in American
+Society”. In The Journal of Popular Culture, 1990, No. 24, pp. 119–130.
+
+35. Holmes, Thom. Electronic and Experimental Music, New York, London: Tay-
+lor and Francis Group, 2002, 2005.
+36. Kajanová, Yvetta. Kapitoly o jazze a rocku.
+Epos, 2003.
+37. Kajanová, Yvetta. Postmoderna v hudbe. Minimal, rock, pop, jazz. Bratislava:
+ies”. In International Review of Aesthetics and Sociology of Music, vol. 44,
+2013, No. 2, pp. 343-359.
+39. Keden, Joachim. Sogenannte Jugendsekten und die okkulte Welle. Aus-
+saat Verlag, 1995; Bratislava:
+40. Kloskowska, Antonina. Kultura masowa. Krytyka i obrona. Warszawa:
+41. Kneif, Tibor. Sachlexikon Rockmusik, Instrumente, Stile, Techniken, Industrie
+und Geschichte. Reinbek bei Hamburg: Rowohlt, 1978.
+samostatná muzikologická disciplina”. In
+pp. 335-352.
+43. Lexmann, Juraj. The Theory of Film Music. Frankfurt: Peter Lang Verlag, 2006.
+44. Lewis, Dave. Led Zeppelin, A Celebration. Bratislava: Champagne Avant-
+garde, 1991.
+45. Matzner, Antonín. Bratislava:
+Smena, 1990.
+46. Encyklo-
+Praha: Supraphon, 1983,
+scéna, 1990.
+47. McCaffery, Larry. The Artists of Hell: Kathy Acker and Punk” Aesthet-
+ics, Across the Wounded Galaxies. Urbana: University of Illinois Press, 1990.
+Punk Rock”. In American Book Review, March-April, vol. 12, 1990, No. 3-4,
+49. Cutting-up: Cyberpunk, Punk Music and Urban
+Decontextualizations, Storming the Reality Studio: A Casebook of Cyberpunk
+and Postmodern Science Fiction. Durham: Duke University Press, 1992.
+50. McLatchey, Mike. Guide to the Progressive Rock Genres [online]. http://
+www.gepr.net/genre2.html
+
+51. Meltzer, Richard. The Aesthetics of Rock. New York: Da Capo Press,
+52. Miles, Barry. Mick Jagger in His Own Words. London: Omnibus Press, 1982;
+Mick Jagger, jeho vlastnými slovami. Bratislava: Champagne Avantgarde,
+53. The Rolling Stone illustrated history of rock & roll.
+New York: Rolling Stone Press, 1976.
+54. Moore, Allan. F. Rock: The Primary Text: Developing a Musicology of
+Rock. Buckingham: Open University Press, 1993.
+Rhythmen”. In Experimentalpsychologische Untersuchungen
+In New Musical Express, 1st February 1986; pp. 26-27.
+LP by a Czech Rock Group”. In Central European Popular Music. Praha,
+1994. pp. 66-72.
+tut/2009-04-27_Panel.htm
+59. . Warszawa: ZAKR, 1986.
+60. Paulin, Don. Das Folk – Musik – Lexikon. Frankfurt am Main: Fischer-
+Taschenbuch-Verlag, 1980.
+61. ABC . Praha: Supra-
+phon, 1984.
+62. Podpera, Rastislav. Quo vadis musica: premeny sociálnych funkcií hudby.
+Bratislava: Veda, 2006.
+In Popular Music and Society, vol. 13, 1990, No. 4, pp. 54-76.
+ence in Everyday Life.” In American Music, vol. 7, 1989, No. 4, pp. 448-460.
+Perspectives of New Music, vol. 27, 1989, No. 2, pp. 6-18.
+66. The New Harvard Dictionary of Music. Cam-
+bridge – Massachusetts: Belknap Press, 1996.
+67. Guiness Book of Rock Stars, the 2nd
+
+68. The New
+Rolling Stone Encyclopedia of Rock & Roll. New York-London: Fireside, 1995.
+69. Roxon, Lillian. Rock Encyklopedia. New York: Penguin, 1969.
+70. Sachs, Curt: Rhythm and Tempo. A Study in Music History. New York:
+Columbia University Press, 1953.
+71. The New Grove Dictionary of Music
+and Musicians. 2nd ed. New York: Grove, 2002.
+Down Beat, vol. 58, March 1991, No. 3, pp. 16-18.
+73. Seashore, Carl Emil: Psychology of Music. New York: McGraw Hill
+Book Comp., 1967.
+74. Shaw, Arnold. Von den Anfägen des Blues zu den Hits aus Memphis und
+Philadelphia. Hamburg: Rowohlt Verlag, 1980.
+75. Shaw, Arnold. Rock’ n’ Roll, Die Stars, die Musik und die Mythen der
+50er Jahre. Hamburg: Rowohlt Verlag, 1978.
+76. Schmiedel, Gottfried. The Beatles. Bratislava: Opus, 1988.
+Praha-Bratislava: Panton, 1967.
+78. Stambler, Irvin & Landon, Grelun. Encyklopedia of Folk, Country and
+Western Music.
+des Musik unter historischen, genetischen und Entwicklungsaspekten”. In
+Musikästhetik in der Diskussion. Vorträge und Diskussionen
+von Goldschmidt, Harry &
+In Popular Music, 1982, No. 2, pp. 37-67.
+81. Thomas, Dave. Johnny Rotten by his Own Words. London: Omnibus
+Press, 1988; Johnny Rotten, jeho vlastnými slovami. Bratislava: Champagne
+Avantgarde, 1993.
+eration.” In New Musical Express, 1st February 1986, pp. 26-27.
+83. Tilgner, Wolfgang. Elvis Presley. Bratislava: Opus, 1990.
+sian popular music in the 2nd half of 20th century”. In R
+85. Viera, Joe. Arrangement und Improvisation. Wien: Universal Edition, 1977.
+86. Viera, Joe. Grundlagen der Jazzrhythmik. Wien: Universal Edition, 1970.
+
+88. Ward, Ed & Stokes, Geoffrey & Tucker, Ken. Rock of Ages. The Rolling
+Stone History of Rock and Roll. New York: Rolling Stone Press, 1986.
+89. Wicke, Peter & Ziegenrücker, Wieland. Rock, Pop, Jazz, Folk. Handbuch
+der populären Musik. Leipzig: VEB, 1985.
+90. Zaminer, Friedrich. Rhythmus und Zeitdauern – Organisation. Zweites Col-
+loquium der Walcker – Stiftung zur Terminologie der Musik des 20. Jahrhun-
+derts. 1972, pp. 60-69.
+Bilboard, Down Beat, Melodie, Melody Maker, New Musical Expres
+
+Notes from the author
+Music transcriptions: Yvetta Kajanová
+This book is primarily intended to be a history of rock music although it is also
+designed as a textbook for students of music, aesthetics, culture and art. To gain
+a better understanding of the theory of rock music it is recommended that readers
+study the music analyses in this book and look more deeply into the pieces. Most
+of them are accessible on the Internet or available in libraries.
