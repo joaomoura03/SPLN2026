@@ -1,0 +1,5 @@
+aquad dataset
+
+pegar no modelo
+dar como input questoes
+o modelo responde
