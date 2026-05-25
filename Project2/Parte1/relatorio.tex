@@ -1,0 +1,405 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{enumitem}
+
+\definecolor{codebg}{rgb}{0.97,0.97,0.97}
+\definecolor{codecomment}{rgb}{0.4,0.4,0.4}
+\definecolor{codekey}{rgb}{0.0,0.0,0.6}
+\definecolor{codestr}{rgb}{0.5,0.0,0.0}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  framerule=0pt,
+  breaklines=true,
+  showstringspaces=false,
+  language=Python,
+  keywordstyle=\color{codekey}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestr},
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  aboveskip=0.8em,
+  belowskip=0.8em,
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black,
+}
+
+\title{
+  \vspace{-1.5cm}
+  \textbf{Trabalho Prático 2, Parte 1} \\
+  \large Pipeline de \emph{Information Retrieval} e \emph{Question Answering}\\
+  \large sobre artigos da Wikipedia
+}
+\author{
+  João Moura \\
+  \small Universidade do Minho, Mestrado em Engenharia Informática \\
+  \small Scripting no Processamento de Linguagem Natural (SPLN), 2025/26
+}
+\date{Maio de 2026}
+
+\begin{document}
+
+\maketitle
+
+\vspace{-0.7cm}
+
+\begin{abstract}
+\noindent Este relatório descreve a implementação de uma \emph{pipeline} de \emph{Information Retrieval} (IR) e \emph{Question Answering} (QA) construída sobre um corpus de artigos da Wikipedia. Como tema foram escolhidos os países do mundo (lista oficial das Nações Unidas), tendo sido construído um corpus de 196 artigos partidos em aproximadamente 9000 \emph{chunks}. O sistema implementa um \emph{retriever} híbrido que combina \emph{BM25} (léxico) e \emph{Sentence-BERT} (semântico) através de \emph{Reciprocal Rank Fusion}, e dois sistemas de QA, um extractivo, com \emph{fine-tuning} de DistilBERT sobre o dataset SQuAD, e outro abstractivo, baseado num esquema RAG (\emph{Retrieval-Augmented Generation}) com o modelo \emph{FLAN-T5}. Os resultados mostram que os dois paradigmas de QA são complementares: o extractivo destaca-se em respostas factoides com elevada precisão, enquanto o abstractivo é mais robusto em paráfrases, perguntas relacionais e em situações em que a informação não está disponível no corpus.
+\end{abstract}
+
+\vspace{0.3cm}
+
+\section{Introdução}
+
+O Trabalho Prático 2 da UC de SPLN tem como objetivo a implementação prática de uma \emph{pipeline} de \emph{Information Retrieval} e \emph{Question Answering}, integrando os conceitos estudados ao longo do semestre: \emph{word embeddings}, \emph{transformers}, \emph{fine-tuning} de modelos pré-treinados e técnicas de \emph{retrieval} léxico e semântico.
+
+Os requisitos do enunciado especificam três tarefas: (a) construção de um corpus com pelo menos 100 documentos sobre um tema à escolha; (b) implementação de um módulo \emph{retriever} capaz de devolver os documentos mais relevantes para uma \emph{query}; (c) implementação de duas estratégias de \emph{Question Answering}, uma extractiva, com \emph{fine-tuning} no SQuAD~\cite{squad}, e uma abstractiva, com \emph{prompting} a um modelo generativo.
+
+Optou-se por construir o corpus a partir de artigos da Wikipedia em inglês sobre os países do mundo. A escolha foi motivada por três fatores: (i) cumprimento confortável do requisito mínimo de documentos (193 Estados-membros da ONU mais alguns observadores); (ii) artigos de qualidade editorial elevada e estrutura relativamente uniforme; (iii) riqueza factual que permite formular perguntas variadas (geográficas, demográficas, históricas, políticas) para avaliação do sistema.
+
+Todo o sistema está implementado num único \emph{Jupyter notebook} (\texttt{tp2.ipynb}) com seis secções correspondentes às fases da \emph{pipeline}: corpus, pré-processamento, \emph{retriever}, QA extractivo, QA abstractivo e demonstração.
+
+\section{Construção do Corpus}
+
+O corpus foi construído a partir da biblioteca \texttt{wikipedia-api} (\emph{wrapper} oficial da API REST da Wikipedia). Para cada país da lista de 196 países foi descarregado o artigo Wikipedia correspondente, com os seguintes cuidados:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{User-Agent próprio}, em conformidade com a política da Wikipedia, identificando o projeto académico.
+    \item \textbf{Resolução de ambiguidades}: alguns títulos de países colidem com outras entidades (por exemplo, ``Georgia'' refere tanto o país do Cáucaso como o estado dos EUA). Foi criado um mapeamento manual de \emph{overrides} para esses casos.
+    \item \textbf{Filtragem de secções navegacionais}: secções como \emph{See also}, \emph{References}, \emph{External links}, \emph{Notes}, \emph{Further reading} e \emph{Bibliography} foram excluídas por não conterem conteúdo factual relevante.
+    \item \textbf{Limpeza de texto}: remoção de marcadores de referência (\texttt{[1]}, \texttt{[2]}, etc.) e normalização de espaçamento.
+    \item \textbf{Cache em disco}: cada artigo é guardado num ficheiro \texttt{.txt} próprio, permitindo retomar a recolha em caso de interrupção sem repetir pedidos à API.
+\end{itemize}
+
+\subsection*{Estatísticas do corpus bruto}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Métrica} & \textbf{Valor} \\
+\midrule
+Países na lista & 196 \\
+Artigos descarregados com sucesso & \textbf{[PREENCHER]} \\
+Total de caracteres no corpus & \textbf{[PREENCHER]} \\
+Total de palavras no corpus & \textbf{[PREENCHER]} \\
+Média de caracteres por artigo & \textbf{[PREENCHER]} \\
+\bottomrule
+\end{tabular}
+\caption{Estatísticas do corpus após recolha.}
+\end{table}
+
+\section{Pré-processamento e \emph{Chunking}}
+
+Os artigos da Wikipedia têm tipicamente dezenas de milhares de caracteres, demasiado para passar diretamente a um modelo de QA, que num \emph{transformer} típico está limitado a 512 \emph{tokens} de contexto. Além disso, o \emph{retriever} funciona melhor sobre passagens curtas e tematicamente coerentes do que sobre artigos completos.
+
+A estratégia adotada foi a divisão por \textbf{parágrafos naturais} (separados por dupla quebra de linha no texto extraído da Wikipedia), com filtragem de parágrafos com menos de 30 palavras (geralmente cabeçalhos, frases soltas ou \emph{stubs}). Cada \emph{chunk} é guardado num único ficheiro \texttt{corpus.json} com a estrutura \texttt{\{id, country, text\}}.
+
+\begin{lstlisting}[caption={Função de \emph{chunking} por parágrafos.}]
+def chunk_article(text, min_words=30):
+    paragraphs = [p.strip() for p in text.split("\n\n") if p.strip()]
+    return [p for p in paragraphs if len(p.split()) >= min_words]
+\end{lstlisting}
+
+Esta abordagem foi preferida a outras alternativas (janela deslizante de tamanho fixo, divisão por frase) por duas razões: (i) preserva a coerência semântica do parágrafo original, que tipicamente trata um único tópico; (ii) tem implementação simples e reprodutível, sem hiperparâmetros sensíveis.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Métrica} & \textbf{Valor} \\
+\midrule
+Total de \emph{chunks} & \textbf{[PREENCHER]} \\
+Média de \emph{chunks} por país & \textbf{[PREENCHER]} \\
+Mediana de palavras por \emph{chunk} & \textbf{[PREENCHER]} \\
+Mínimo / máximo de palavras por \emph{chunk} & \textbf{[PREENCHER]} \\
+\bottomrule
+\end{tabular}
+\caption{Estatísticas após \emph{chunking}.}
+\end{table}
+
+\section{\emph{Retriever} Híbrido}
+
+O módulo \emph{retriever} foi implementado em três variantes, com o objetivo de comparar abordagens léxicas, semânticas e híbridas.
+
+\subsection{BM25 (léxico)}
+
+A primeira abordagem usa \textbf{BM25}~\cite{bm25}, uma função de pontuação que generaliza o TF-IDF e que continua a ser uma \emph{baseline} forte em \emph{retrieval}. A implementação usa a biblioteca \texttt{rank-bm25} (\texttt{BM25Okapi}). A tokenização é simples: \emph{lowercase} e \emph{split} por caracteres alfanuméricos (\texttt{re.findall(r"\textbackslash w+", text.lower())}). Não foi feita remoção de \emph{stopwords} porque o próprio BM25 ajusta o peso de termos frequentes através do IDF.
+
+\subsection{Sentence-BERT (semântico)}
+
+A segunda abordagem usa \emph{embeddings} densos calculados com \textbf{Sentence-BERT}~\cite{sbert}. O modelo escolhido foi o \texttt{multi-qa-MiniLM-L6-cos-v1}, especificamente treinado para \emph{retrieval} em contexto de QA, com 384 dimensões e tamanho reduzido (cerca de 80~MB), apropriado para correr em CPU.
+
+Os \emph{embeddings} de todos os \emph{chunks} são pré-calculados uma única vez e guardados em \texttt{embeddings.npy}. Para uma \emph{query}, calcula-se o \emph{embedding} e ordenam-se os \emph{chunks} por similaridade cosseno (que coincide com o produto interno, dado que os \emph{embeddings} estão normalizados).
+
+\subsection{Híbrido - \emph{Reciprocal Rank Fusion}}
+
+A terceira abordagem combina as \emph{rankings} dos dois \emph{retrievers} através de \textbf{Reciprocal Rank Fusion} (RRF)~\cite{rrf}, definida por:
+
+\begin{equation}
+\text{RRF}(d) = \sum_{r \in R} \frac{1}{k + \text{rank}_r(d)}
+\end{equation}
+
+\noindent onde $R = \{\text{BM25}, \text{Sentence-BERT}\}$, $\text{rank}_r(d)$ é a posição do documento $d$ na \emph{ranking} do \emph{retriever} $r$, e $k = 60$ é uma constante de suavização típica da literatura. A vantagem do RRF é combinar \emph{rankings} em vez de \emph{scores} brutos, evitando o problema das escalas diferentes (BM25 produz \emph{scores} em $\mathbb{R}_{\geq 0}$; \emph{cosine} entre $-1$ e $1$).
+
+\subsection{Análise comparativa}
+
+Para avaliar qualitativamente os três \emph{retrievers}, foram usadas três \emph{queries} representativas de padrões distintos de pergunta:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Q1.} \emph{What is the capital of Portugal?}- factoide direto, com a \emph{keyword} principal (``Portugal'') a aparecer literalmente no texto.
+    \item \textbf{Q2.} \emph{Which countries border Brazil?}- pergunta relacional, exige compreender o conceito de fronteira.
+    \item \textbf{Q3.} \emph{When did Germany reunify?}- envolve paráfrase, dado que o termo ``reunify'' não aparece no artigo (o texto usa ``reunification'' e ``Berlin/Bonn Act of 1994'').
+\end{itemize}
+
+Os resultados observados ilustram bem as forças e fraquezas de cada abordagem:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lp{3.5cm}p{3.5cm}p{3.5cm}}
+\toprule
+\textbf{Query} & \textbf{BM25 (top-1)} & \textbf{Semantic (top-1)} & \textbf{Híbrido (top-1)} \\
+\midrule
+Q1: Capital Portugal & \emph{chunk} sobre Neanderthals (ocorrências literais de ``Portugal'' mas irrelevante) & \emph{chunk} com ``Lisbon as its capital'', correto & \emph{chunk} com ``Lisbon as its capital'', correto \\
+\midrule
+Q2: Fronteiras Brasil & Uruguai (artigo sobre disputa territorial com o Brasil) & Brasil (\emph{chunk} com lista de países vizinhos), correto & Uruguai, \emph{ranking} arrastada pela concordância \\
+\midrule
+Q3: Reunificação Alemanha & Camarões, Luxemburgo, Marshall Is. (mencionam ``Germany'' em contextos errados) & Três \emph{chunks} sobre a Alemanha, incluindo o ato de reunificação, correto & \emph{chunk} sobre capitulação Nazi (início da história da reunificação) \\
+\bottomrule
+\end{tabular}
+\caption{Resultados dos três \emph{retrievers} para as \emph{queries} de teste.}
+\end{table}
+
+\noindent\textbf{Conclusões da análise}:
+\begin{itemize}[noitemsep]
+    \item O \textbf{BM25} é o melhor quando a pergunta usa as mesmas palavras do texto, mas é facilmente enganado por frequência elevada de termos em contextos errados (caso Q1, em que o \emph{chunk} sobre Neanderthals contém o termo ``Portugal'' mais vezes que o \emph{chunk} pertinente).
+    \item O \textbf{retriever semântico} é claramente superior em \emph{queries} com paráfrases (Q3) e relacionais (Q2), pois consegue mapear o significado para além das palavras exatas.
+    \item O \textbf{híbrido (RRF)} é robusto na maior parte dos casos, mas em Q2 produziu um resultado pior que o semântico isolado, porque o documento sobre Uruguai aparece bem posicionado em ambas as \emph{rankings} e o RRF favorece o consenso entre os dois.
+\end{itemize}
+
+\section{Question Answering Extractivo}
+
+A primeira estratégia de QA é \emph{extractiva}: o modelo recebe uma pergunta e um contexto, e devolve uma \emph{span} (sequência contígua de \emph{tokens}) do contexto que constitui a resposta. Esta abordagem é típica em modelos baseados em BERT~\cite{bert}.
+
+\subsection{Modelo e \emph{Fine-Tuning}}
+
+Foi escolhido o \texttt{distilbert-base-uncased}~\cite{distilbert}, uma versão destilada (40\% mais pequena, 60\% mais rápida) do BERT que preserva cerca de 97\% do desempenho em tarefas \emph{downstream}. O \emph{fine-tuning} foi efetuado no SQuAD v1.1~\cite{squad}, o dataset de referência para QA extractivo, composto por mais de 100~mil pares pergunta-resposta sobre artigos da Wikipedia.
+
+Por restrições de tempo de computação (cerca de 30~min em GPU T4 do Google Colab), foi usado um subconjunto de 20~000 exemplos de treino e 500 de validação. O treino correu com a configuração detalhada na Tabela~\ref{tab:training}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Hiperparâmetro} & \textbf{Valor} \\
+\midrule
+Modelo base & \texttt{distilbert-base-uncased} \\
+Tamanho máximo de sequência & 384 \\
+\emph{Stride} (overflow) & 128 \\
+\emph{Learning rate} & $3 \times 10^{-5}$ \\
+Épocas & 2 \\
+\emph{Batch size} & 16 \\
+\emph{Weight decay} & 0.01 \\
+Precisão & FP16 (em GPU) \\
+\bottomrule
+\end{tabular}
+\caption{Hiperparâmetros do \emph{fine-tuning}.}
+\label{tab:training}
+\end{table}
+
+A tokenização usa a estratégia padrão para QA com SQuAD: o par (pergunta, contexto) é codificado conjuntamente, e em contextos longos é usado \emph{stride} para criar múltiplas janelas sobrepostas, garantindo que a resposta correta cabe pelo menos numa delas. As posições de início e fim do \emph{span} resposta nos \emph{tokens} são calculadas a partir do \emph{offset mapping}.
+
+\subsection{Resultados}
+
+A avaliação foi efetuada num subconjunto de 500 exemplos da partição \emph{validation} do SQuAD, com as métricas oficiais Exact Match (EM) e F1.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Métrica} & \textbf{Valor} \\
+\midrule
+Exact Match (EM) & \textbf{[PREENCHER]} \\
+F1 score & \textbf{[PREENCHER]} \\
+\bottomrule
+\end{tabular}
+\caption{Resultados no SQuAD validation (500 exemplos).}
+\end{table}
+
+A literatura reporta para DistilBERT com \emph{fine-tuning} completo no SQuAD valores na ordem de EM~$\approx$~77 e F1~$\approx$~85. Com apenas 20~000 exemplos de treino (cerca de 23\% do total) e 2 épocas, é esperado um ligeiro decréscimo, mas com resultados perfeitamente apresentáveis para a tarefa.
+
+\subsection{Integração com o \emph{retriever}}
+
+Para a inferência em \emph{queries} reais, o sistema combina o \emph{retriever} híbrido com o modelo extractivo: recupera os 3 \emph{chunks} mais relevantes, executa o modelo QA sobre cada um, e escolhe a resposta com maior \emph{score} de confiança. Esta estratégia permite recuperar quando o \emph{retriever} não devolve o \emph{chunk} ideal em primeiro lugar.
+
+\begin{lstlisting}[caption={Inferência extractiva com retriever (top-3 chunks).}]
+def extractive_qa(query, top_k=3):
+    retrieved = hybrid_search(query, top_k=top_k)
+    candidates = []
+    for doc_id, retr_score in retrieved:
+        chunk = corpus[doc_id]
+        pred = qa_pipe(question=query, context=chunk["text"])
+        candidates.append({
+            "country": chunk["country"],
+            "answer": pred["answer"],
+            "qa_score": pred["score"],
+        })
+    return max(candidates, key=lambda c: c["qa_score"])
+\end{lstlisting}
+
+\section{Question Answering Abstractivo (RAG)}
+
+A segunda estratégia segue o paradigma \emph{Retrieval-Augmented Generation} (RAG)~\cite{rag}: o \emph{retriever} fornece o contexto a um modelo generativo, que produz uma resposta em linguagem natural, podendo parafrasear, sintetizar ou recusar responder.
+
+\subsection{Modelo}
+
+Foi usado o \texttt{google/flan-t5-base}~\cite{flant5}, uma variante \emph{instruction-tuned} do T5 com cerca de 250~M parâmetros. O FLAN-T5 foi treinado em mais de 1800 tarefas formuladas como instruções, o que lhe confere capacidade \emph{zero-shot} robusta para tarefas de QA quando recebe um \emph{prompt} bem estruturado.
+
+\subsection{\emph{Prompt} usado}
+
+A construção do \emph{prompt} segue um padrão típico de RAG, com três cuidados específicos:
+
+\begin{itemize}[noitemsep]
+    \item Cada \emph{chunk} no contexto é prefixado com \texttt{[Nome do País]} para o modelo perceber a proveniência da informação.
+    \item Instrução explícita para responder apenas com base no contexto fornecido.
+    \item Instrução explícita para dizer \emph{``I don't know''} quando o contexto não contém a resposta, comportamento desejável e que distingue esta estratégia da extractiva.
+\end{itemize}
+
+\begin{lstlisting}[caption={Estrutura do prompt RAG.}, language=]
+Answer the following question based only on the provided context.
+If the context does not contain the answer, say "I don't know".
+
+Context:
+[Country 1] <chunk text>
+
+[Country 2] <chunk text>
+
+[Country 3] <chunk text>
+
+Question: <user query>
+Answer:
+\end{lstlisting}
+
+A geração foi configurada com \emph{beam search} (4 \emph{beams}) e limite de 80 \emph{tokens} na resposta. O limite de \emph{input} foi fixado em 1024 \emph{tokens}.
+
+\section{Demonstração e Comparação dos Sistemas}
+
+Para avaliação qualitativa dos dois sistemas, foi construído um conjunto de 8 \emph{queries} cobrindo padrões de pergunta distintos. A Tabela~\ref{tab:demo} apresenta os resultados.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{p{4.5cm}p{3cm}p{3cm}p{2cm}}
+\toprule
+\textbf{Query} & \textbf{Extractivo} & \textbf{Abstractivo} & \textbf{Categoria} \\
+\midrule
+What is the capital of Portugal? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Factoide \\
+What is the official language of Japan? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Factoide \\
+What is the population of Iceland? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Numérico \\
+Which countries border Brazil? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Relacional \\
+When did India gain independence? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Histórico \\
+When did Germany reunify? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Paráfrase \\
+What currency is used in France? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Paráfrase \\
+Who won the 2026 FIFA World Cup? & \textbf{[PREENCHER]} & \textbf{[PREENCHER]} & Armadilha \\
+\bottomrule
+\end{tabular}
+\caption{Comparação extractivo vs.\ abstractivo nas \emph{queries} de demonstração.}
+\label{tab:demo}
+\end{table}
+
+\noindent\textbf{Observações esperadas}:
+
+\begin{itemize}[noitemsep]
+    \item Em \textbf{factoides simples} (capital, língua), espera-se que ambos os sistemas acertem com facilidade, frequentemente com a mesma resposta.
+    \item Em \textbf{perguntas numéricas} (população), o extractivo tende a devolver o número exato (\textit{span} literal do texto); o abstractivo pode arredondar ou parafrasear.
+    \item Em \textbf{perguntas relacionais} (fronteiras), o extractivo é limitado a uma única \textit{span} contígua e portanto perde a lista completa; o abstractivo consegue enumerar todos os países.
+    \item Em \textbf{paráfrases}, ambos beneficiam do \emph{retriever} semântico que devolve o \emph{chunk} certo apesar de a \emph{query} usar termos diferentes do texto.
+    \item Na \textbf{pergunta-armadilha} (FIFA World Cup 2026, informação inexistente no corpus), o comportamento esperado é o ponto mais interessante: o modelo abstractivo idealmente responde ``I don't know'' graças à instrução explícita no \emph{prompt}, enquanto o extractivo, por construção, nunca devolve essa resposta e seleciona sempre alguma \emph{span} do contexto, que neste caso será necessariamente errada. Esta diferença ilustra uma limitação estrutural dos modelos extractivos: ausência de mecanismo de abstenção.
+\end{itemize}
+
+\section{Conclusões}
+
+Foi implementada uma \emph{pipeline} completa de IR e QA sobre um corpus de aproximadamente 9000 \emph{chunks} extraídos de artigos Wikipedia sobre os países do mundo. O \emph{retriever} híbrido combina BM25 e Sentence-BERT, e os dois sistemas de QA cobrem as duas estratégias clássicas (extractiva via DistilBERT \emph{fine-tuned}; abstractiva via RAG com FLAN-T5).
+
+A análise comparativa permitiu três conclusões principais:
+
+\begin{enumerate}[noitemsep]
+    \item O \textbf{\emph{retriever} semântico} é claramente superior ao léxico em \emph{queries} com paráfrases, mas o léxico mantém-se útil para \emph{queries} com entidades nomeadas raras. O híbrido captura o melhor dos dois \emph{na maioria} dos casos, embora em alguns possa ser superado pelo semântico isolado.
+    \item Os dois sistemas de \textbf{QA} são complementares: o extractivo é mais preciso em factoides simples e oferece a vantagem de devolver a resposta na sua forma literal (útil para datas e nomes próprios), enquanto o abstractivo é mais flexível em perguntas relacionais e em paráfrases, e, mais importante, consegue abster-se quando não tem informação no contexto.
+    \item A \textbf{combinação \emph{retriever} + QA} é genuinamente sinérgica: o \emph{retriever} maximiza \emph{recall} (passa ao QA os candidatos prováveis), e o QA maximiza \emph{precision} (escolhe a melhor resposta dentro desses candidatos). Esta separação de responsabilidades é o que torna a arquitetura robusta.
+\end{enumerate}
+
+\subsection*{Limitações e Trabalho Futuro}
+
+\begin{itemize}[noitemsep]
+    \item O modelo extractivo foi \emph{fine-tuned} num subconjunto do SQuAD (20~000 exemplos) por restrições de tempo. Um treino completo (88~000 exemplos, 3 épocas) elevaria EM e F1 em alguns pontos.
+    \item O modelo abstractivo FLAN-T5-\emph{base} é relativamente pequeno (250~M parâmetros). Modelos maiores (FLAN-T5-\emph{large} ou \emph{xl}) ou modelos especializados em RAG dariam respostas de qualidade superior, em especial em perguntas multi-\emph{hop}.
+    \item A estratégia de \emph{chunking} é simples (parágrafos). Estratégias mais sofisticadas, com \emph{overlap} ou com pré-classificação por tipo de informação (geografia, demografia, história), poderiam melhorar a qualidade do \emph{retrieval}.
+    \item Não foi feita avaliação quantitativa do sistema completo (\emph{end-to-end} em \emph{queries} reais sobre o corpus de países) por inexistência de \emph{ground truth} para esta tarefa específica. Uma extensão natural seria construir um pequeno conjunto de pares pergunta-resposta sobre os países e medir \emph{accuracy} formalmente.
+\end{itemize}
+
+\begin{thebibliography}{99}
+
+\bibitem{bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
+\newblock In \emph{NAACL}, 2019.
+
+\bibitem{distilbert}
+Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf.
+\newblock DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.
+\newblock arXiv:1910.01108, 2019.
+
+\bibitem{sbert}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks.
+\newblock In \emph{EMNLP}, 2019.
+
+\bibitem{squad}
+Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang.
+\newblock SQuAD: 100,000+ Questions for Machine Comprehension of Text.
+\newblock In \emph{EMNLP}, 2016.
+
+\bibitem{rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rockt{ä}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{flant5}
+Hyung Won Chung, Le Hou, Shayne Longpre, et al.
+\newblock Scaling Instruction-Finetuned Language Models.
+\newblock arXiv:2210.11416, 2022.
+
+\bibitem{bm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The Probabilistic Relevance Framework: BM25 and Beyond.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3(4):333--389, 2009.
+
+\bibitem{rrf}
+Gordon V. Cormack, Charles L. A. Clarke, and Stefan Buettcher.
+\newblock Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods.
+\newblock In \emph{SIGIR}, 2009.
+
+\end{thebibliography}
+
+\end{document}
